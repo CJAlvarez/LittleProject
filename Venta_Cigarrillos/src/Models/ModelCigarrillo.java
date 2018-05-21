@@ -29,10 +29,10 @@ public class ModelCigarrillo extends Model {
         String cons;
         cigarrillos = new ArrayList();
         try {
-            cons = "SELECT * FROM CIGARRILLO";
+            cons = "SELECT * FROM CIGARRILLO;";
             ResultSet rs = statement.executeQuery(cons);
             while (rs.next()) {
-                Cigarrillo cigarrillo = new Cigarrillo();
+                Cigarrillo cigarrillo = new Cigarrillo(rs.getInt("NUM_CIGA"), rs.getString("FILT").charAt(0), rs.getString("COLORH"), rs.getInt("ALQUITRAN"), rs.getInt("NICOTINA"), rs.getString("MARCA"), rs.getString("CLASE"),rs.getString("MENTOL").charAt(0), rs.getFloat("PREVENTA"), rs.getFloat("PRECOMPRA"));
                 cigarrillos.add(cigarrillo);
             }
             System.out.println("LECTURA COMPLETA");
@@ -45,15 +45,12 @@ public class ModelCigarrillo extends Model {
     @Override
     public void write(Object o) throws SQLException {
         super.connect();
-        Cigarrillo aw = (Cigarrillo) o;
+        Cigarrillo cw = (Cigarrillo) o;
         statement = connection.createStatement();
         String cadSQL;
         int r;
         try {
-            cadSQL = "INSERT INTO ALMACEN values (" + aw.getIdFiscal() + ", " + aw.getNumCigarrillo() + ", " + aw.getCantCigarrillo() + ", " + aw.getNumExpendio() + ")";
-            r = statement.executeUpdate(cadSQL);
-            statement = connection.createStatement();
-            cadSQL = "INSERT INTO EXPEN_ALMA values (" + aw.getNumExpendio() + ", '" + aw.getLocalidad() + "', '" + aw.getNombre() + "')";
+            cadSQL = "INSERT INTO ALMACEN values (" + cw.getIdFiscal() + ", " + cw.getNumCigarrillo() + ", " + cw.getCantCigarrillo() + ", " + cw.getNumExpendio() + ")";
             r = statement.executeUpdate(cadSQL);
             System.out.println("ESCRITURA COMPLETA");
         } catch (Exception e) {

@@ -2224,7 +2224,7 @@ public class Inicio extends javax.swing.JFrame {
                 alquitran = (Integer) js_alquitran.getValue();
                 precio_v = Float.parseFloat(jt_preciov.getText());
                 precio_c = Float.parseFloat(jt_precioc.getText());
-                c = new Cigarrillo(numCigarrillo, filtro, colorHoja, alquitran, nicotina, marca, mentol, precio_v, precio_c);
+                c = new Cigarrillo(numCigarrillo, filtro, colorHoja, alquitran, nicotina, marca, "", mentol, precio_v, precio_c);
                 cigarrillo.add(c);
                 JOptionPane.showMessageDialog(jf_cigarrillos, "Cigarrillo agregado!");
             } catch (NumberFormatException e) {
