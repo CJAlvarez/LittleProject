@@ -100,4 +100,18 @@ public abstract class Model {
             System.err.println("ERROR_DELETE");
         }
         */
+    
+    public abstract void update() throws SQLException;
+    /*
+        statement = connection.createStatement();
+        String cadSQL;
+        int r;
+        try {
+            cadSQL = "UPDATE ####### SET ID = '" = "' WHERE ID = '" = "'";
+            r = statement.executeUpdate(cadSQL);
+            System.out.println("ACTUALIZACION COMPLETA");
+        } catch (Exception e) {
+            System.err.println("ERROR_UPDATE");
+        }
+    */
 }
