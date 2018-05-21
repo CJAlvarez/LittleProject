@@ -1,6 +1,5 @@
 package venta_cigarrillos;
 
-
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.util.ArrayList;
@@ -77,6 +76,10 @@ public class Inicio extends javax.swing.JFrame {
         jLabel27 = new javax.swing.JLabel();
         js_nicotina = new javax.swing.JSpinner();
         js_alquitran = new javax.swing.JSpinner();
+        jLabel61 = new javax.swing.JLabel();
+        jLabel62 = new javax.swing.JLabel();
+        jt_preciov = new javax.swing.JTextField();
+        jt_precioc = new javax.swing.JTextField();
         jPanel5 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         jt_cigarrillo = new javax.swing.JTable();
@@ -506,13 +509,17 @@ public class Inicio extends javax.swing.JFrame {
         jLabel27.setFont(new java.awt.Font("MS Reference Sans Serif", 0, 14)); // NOI18N
         jLabel27.setText("Alquitran");
 
+        jLabel61.setText("Precio de Venta");
+
+        jLabel62.setText("Precio de Compra");
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(182, 182, 182)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel14)
@@ -537,24 +544,32 @@ public class Inicio extends javax.swing.JFrame {
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jt_marca, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jc_mentol, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(js_alquitran, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(0, 273, Short.MAX_VALUE))
+                            .addComponent(js_alquitran, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(33, 33, 33)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel61)
+                            .addComponent(jLabel62))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jt_preciov)
+                            .addComponent(jt_precioc))))
+                .addGap(0, 412, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addComponent(jButton3)
-                        .addContainerGap())
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel11)
-                        .addGap(254, 254, 254))))
+                .addContainerGap(779, Short.MAX_VALUE)
+                .addComponent(jButton3)
+                .addContainerGap())
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(277, 277, 277)
+                .addComponent(jLabel11)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(33, 33, 33)
+                .addGap(30, 30, 30)
                 .addComponent(jLabel11)
-                .addGap(46, 46, 46)
+                .addGap(49, 49, 49)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel13)
                     .addComponent(js_numCigarrillo1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -585,7 +600,15 @@ public class Inicio extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel26)
                     .addComponent(jc_mentol, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 59, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jt_preciov, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel61))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel62)
+                    .addComponent(jt_precioc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
                 .addComponent(jb_agregarCigarrillo)
                 .addGap(6, 6, 6)
                 .addComponent(jButton3)
@@ -601,7 +624,7 @@ public class Inicio extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Num. Cigarrillo", "Filtro", "Color de Hoja", "Nicotina", "Alquitran", "Marca", "Mentol"
+                "Num. Cigarrillo", "Filtro", "Color de Hoja", "Nicotina", "Alquitran", "Marca", "Mentol", "PrecioVenta", "PrecioCompra"
             }
         ));
         jScrollPane2.setViewportView(jt_cigarrillo);
@@ -613,11 +636,11 @@ public class Inicio extends javax.swing.JFrame {
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 870, Short.MAX_VALUE)
             .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGap(176, 176, 176)
+                .addGap(257, 257, 257)
                 .addComponent(jLabel12)
-                .addContainerGap(250, Short.MAX_VALUE))
-            .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -625,7 +648,7 @@ public class Inicio extends javax.swing.JFrame {
                 .addComponent(jLabel12)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 383, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(77, Short.MAX_VALUE))
+                .addContainerGap(109, Short.MAX_VALUE))
         );
 
         jTabbedPane2.addTab("Eliminar/Listar/Modificar", jPanel5);
@@ -635,7 +658,7 @@ public class Inicio extends javax.swing.JFrame {
         jf_cigarrillosLayout.setHorizontalGroup(
             jf_cigarrillosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jf_cigarrillosLayout.createSequentialGroup()
-                .addComponent(jTabbedPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 736, Short.MAX_VALUE)
+                .addComponent(jTabbedPane2)
                 .addGap(0, 0, 0))
         );
         jf_cigarrillosLayout.setVerticalGroup(
@@ -2168,12 +2191,10 @@ public class Inicio extends javax.swing.JFrame {
 
         int numCigarrillo, nicotina, alquitran;
         char filtro, mentol;
+        float precio_v, precio_c;
         String colorHoja, marca;
         Cigarrillo c;
 
-        numCigarrillo = (Integer) js_numCigarrillo1.getValue();
-        nicotina = (Integer) js_nicotina.getValue();
-        alquitran = (Integer) js_alquitran.getValue();
         marca = jt_marca.getText();
         if (jc_filtro.getSelectedIndex() == 0) {
             filtro = 'v';
@@ -2197,9 +2218,18 @@ public class Inicio extends javax.swing.JFrame {
 
             JOptionPane.showMessageDialog(jf_cigarrillos, "Hay campos vacios, por favor ingrese la información necesaria");
         } else {
-            c = new Cigarrillo(numCigarrillo, filtro, colorHoja, alquitran, nicotina, marca, mentol);
-            cigarrillo.add(c);
-            JOptionPane.showMessageDialog(jf_cigarrillos, "Cigarrillo agregado!");
+            try {
+                numCigarrillo = (Integer) js_numCigarrillo1.getValue();
+                nicotina = (Integer) js_nicotina.getValue();
+                alquitran = (Integer) js_alquitran.getValue();
+                precio_v = Float.parseFloat(jt_preciov.getText());
+                precio_c = Float.parseFloat(jt_precioc.getText());
+                c = new Cigarrillo(numCigarrillo, filtro, colorHoja, alquitran, nicotina, marca, mentol, precio_v, precio_c);
+                cigarrillo.add(c);
+                JOptionPane.showMessageDialog(jf_cigarrillos, "Cigarrillo agregado!");
+            } catch (NumberFormatException e) {
+                JOptionPane.showMessageDialog(jf_cigarrillos, "¡Ha ingresado un valor invalido");
+            }
 
         }
 
@@ -2207,6 +2237,8 @@ public class Inicio extends javax.swing.JFrame {
         js_numCigarrillo1.setValue(0);
         js_alquitran.setValue(0);
         js_nicotina.setValue(0);
+        jt_preciov.setText("");
+        jt_precioc.setText("");
 
 
     }//GEN-LAST:event_jb_agregarCigarrilloMouseClicked
@@ -2227,7 +2259,7 @@ public class Inicio extends javax.swing.JFrame {
         }
 
         for (int i = 0; i < cigarrillo.size(); i++) {
-            Object[] newRow = new Object[]{cigarrillo.get(i).getNumCigarrillo(), cigarrillo.get(i).getFiltro(), cigarrillo.get(i).getColorHoja(), cigarrillo.get(i).getNicotina(), cigarrillo.get(i).getAlquitran(), cigarrillo.get(i).getMarca(), cigarrillo.get(i).getMentol()};
+            Object[] newRow = new Object[]{cigarrillo.get(i).getNumCigarrillo(), cigarrillo.get(i).getFiltro(), cigarrillo.get(i).getColorHoja(), cigarrillo.get(i).getNicotina(), cigarrillo.get(i).getAlquitran(), cigarrillo.get(i).getMarca(), cigarrillo.get(i).getMentol(), cigarrillo.get(i).getPrecio_v(), cigarrillo.get(i).getPrecio_c()};
             model.addRow(newRow);
             jt_cigarrillo.setModel(model);
         }
@@ -2258,6 +2290,7 @@ public class Inicio extends javax.swing.JFrame {
         int numCigarrillo = 0, nicotina = 0, alquitran = 0;
         String opc;
         char filtro, mentol;
+        float precio_v = 0, precio_c = 0;
         boolean a; //Para saber si los datos fueron correctos o no
         String colorHoja, marca;
 
@@ -2291,6 +2324,8 @@ public class Inicio extends javax.swing.JFrame {
                 numCigarrillo = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el número del cigarrillo: "));
                 nicotina = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la cantidad de nicotina: "));
                 alquitran = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la cantidad de alquitran: "));
+                precio_v = Float.parseFloat(JOptionPane.showInputDialog("Ingrese el precio de VENTA: "));
+                precio_c = Float.parseFloat(JOptionPane.showInputDialog("Ingrese el precio de COMPRA: "));
                 a = true;
             } catch (NumberFormatException e) {
                 JOptionPane.showMessageDialog(jf_cigarrillos, "¡Ha ingresado un valor invalido");
@@ -2302,9 +2337,11 @@ public class Inicio extends javax.swing.JFrame {
                 cigarrillo.get(jt_cigarrillo.getSelectedRow()).setNicotina(nicotina);
                 cigarrillo.get(jt_cigarrillo.getSelectedRow()).setAlquitran(alquitran);
                 cigarrillo.get(jt_cigarrillo.getSelectedRow()).setMentol(mentol);
-                cigarrillo.get(jt_cigarrillo.getSelectedRow()).setColorHoja(colorHoja);;
-                cigarrillo.get(jt_cigarrillo.getSelectedRow()).setFiltro(filtro);;
+                cigarrillo.get(jt_cigarrillo.getSelectedRow()).setColorHoja(colorHoja);
+                cigarrillo.get(jt_cigarrillo.getSelectedRow()).setFiltro(filtro);
                 cigarrillo.get(jt_cigarrillo.getSelectedRow()).setMarca(marca);
+                cigarrillo.get(jt_cigarrillo.getSelectedRow()).setPrecio_v(precio_v);
+                cigarrillo.get(jt_cigarrillo.getSelectedRow()).setPrecio_c(precio_c);
                 JOptionPane.showMessageDialog(jf_cigarrillos, "¡Campo modificado exitosamente, para ver tus cambios refresca la tabla!");
             } else {
                 JOptionPane.showMessageDialog(jf_cigarrillos, "¡El campo no ha sido modificado!");
@@ -2815,7 +2852,7 @@ public class Inicio extends javax.swing.JFrame {
 
         idFiscal = (Integer) js_idfiscalp.getValue();
         idCompra = (Integer) js_idcomprap.getValue();
-        p= new Pedido(idFiscal, idCompra);
+        p = new Pedido(idFiscal, idCompra);
         pedido.add(p);
 
         js_idfiscalp.setValue(0);
@@ -2842,7 +2879,7 @@ public class Inicio extends javax.swing.JFrame {
 
     private void jm_eliminarpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jm_eliminarpActionPerformed
         // ELIMINAR PEDIDO
-         DefaultTableModel model = (DefaultTableModel) jt_pedido.getModel();
+        DefaultTableModel model = (DefaultTableModel) jt_pedido.getModel();
         if (jt_pedido.getSelectedRow() >= 0) {
             pedido.remove(jt_pedido.getSelectedRow());
             model.removeRow(jt_pedido.getSelectedRow());
@@ -2857,7 +2894,7 @@ public class Inicio extends javax.swing.JFrame {
 
     private void jm_modificarpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jm_modificarpActionPerformed
         // MODIFICAR PEDIDO
-         int idCompra = 0, idFiscal = 0;
+        int idCompra = 0, idFiscal = 0;
         boolean a;
 
         if (jt_pedido.getSelectedRow() >= 0) {
@@ -2887,7 +2924,7 @@ public class Inicio extends javax.swing.JFrame {
 
     private void jb_agregarventaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_agregarventaMouseClicked
         // AGREGAR VENTA
-         int idVenta, idFiscal, numCigarrillo, totalNumCigarrillo, dia, mes, year;
+        int idVenta, idFiscal, numCigarrillo, totalNumCigarrillo, dia, mes, year;
 
         Venta v;
 
@@ -2954,7 +2991,7 @@ public class Inicio extends javax.swing.JFrame {
 
     private void jTabbedPane9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTabbedPane9MouseClicked
         // LISTAR VENTAS
-        
+
         DefaultTableModel model = (DefaultTableModel) jt_venta.getModel();
 
         int rows = model.getRowCount();
@@ -3078,6 +3115,8 @@ public class Inicio extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel59;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel60;
+    private javax.swing.JLabel jLabel61;
+    private javax.swing.JLabel jLabel62;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
@@ -3211,6 +3250,8 @@ public class Inicio extends javax.swing.JFrame {
     private javax.swing.JTextField jt_nombrem;
     private javax.swing.JTextField jt_numExpendio;
     private javax.swing.JTable jt_pedido;
+    private javax.swing.JTextField jt_precioc;
+    private javax.swing.JTextField jt_preciov;
     private javax.swing.JTextField jt_sede;
     private javax.swing.JTable jt_venta;
     private javax.swing.JMenuItem pop_eliminarc;

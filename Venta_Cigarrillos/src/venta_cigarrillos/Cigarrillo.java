@@ -9,8 +9,10 @@ public class Cigarrillo {
     private int nicotina;
     private String marca;
     private char mentol;
+    private float precio_v;
+    private float precio_c;
 
-    public Cigarrillo(int numCigarrillo, char filtro, String colorHoja, int alquitran, int nicotina, String marca, char mentol) {
+    public Cigarrillo(int numCigarrillo, char filtro, String colorHoja, int alquitran, int nicotina, String marca, char mentol, float precio_v, float precio_c) {
         this.numCigarrillo = numCigarrillo;
         this.filtro = filtro;
         this.colorHoja = colorHoja;
@@ -18,7 +20,27 @@ public class Cigarrillo {
         this.nicotina = nicotina;
         this.marca = marca;
         this.mentol = mentol;
+        this.precio_v = precio_v;
+        this.precio_c = precio_c;
     }
+
+    public float getPrecio_v() {
+        return precio_v;
+    }
+
+    public void setPrecio_v(float precio_v) {
+        this.precio_v = precio_v;
+    }
+
+    public float getPrecio_c() {
+        return precio_c;
+    }
+
+    public void setPrecio_c(float precio_c) {
+        this.precio_c = precio_c;
+    }
+
+
 
     public int getNumCigarrillo() {
         return numCigarrillo;
