@@ -2747,11 +2747,11 @@ public class Inicio extends javax.swing.JFrame {
         // AGREGAR MARCA
         int idFabricante;
         String nombre;
-        Marca m;
+        Manufactura m;
 
         idFabricante = (Integer) js_idfabricantem.getValue();
         nombre = jt_nombrem.getText();
-        m = new Marca(idFabricante, nombre);
+        m = new Manufactura(idFabricante, nombre);
         marca.add(m);
 
         js_idfabricantem.setValue(0);
@@ -3048,7 +3048,7 @@ public class Inicio extends javax.swing.JFrame {
     ArrayList<Distribuidor> distribuidor = new ArrayList();
     ArrayList<Estanco> estanco = new ArrayList();
     ArrayList<Fabricante> fabricante = new ArrayList();
-    ArrayList<Marca> marca = new ArrayList();
+    ArrayList<Manufactura> marca = new ArrayList();
     ArrayList<Pedido> pedido = new ArrayList();
     ArrayList<Venta> venta = new ArrayList();
 

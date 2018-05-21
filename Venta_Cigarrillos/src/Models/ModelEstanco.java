@@ -11,7 +11,8 @@ import venta_cigarrillos.Estanco;
  * @author CJ
  */
 public class ModelEstanco extends Model {
-protected ArrayList<Estanco> estancos;
+
+    protected ArrayList<Estanco> estancos;
 
     public ModelEstanco() {
         this.estancos = new ArrayList();
@@ -49,7 +50,7 @@ protected ArrayList<Estanco> estancos;
         String cadSQL;
         int r;
         try {
-            cadSQL = "INSERT INTO ESTANCOS values (" + cw.getIdFiscal()+ ", " + cw.getNumExpendio()+ ", '" + cw.getNombre()+ "', '" + cw.getLocalidad()+ "', '" + cw.getProvincia()+ "');";
+            cadSQL = "INSERT INTO ESTANCOS values (" + cw.getIdFiscal() + ", " + cw.getNumExpendio() + ", '" + cw.getNombre() + "', '" + cw.getLocalidad() + "', '" + cw.getProvincia() + "');";
             r = statement.executeUpdate(cadSQL);
             System.out.println("ESCRITURA COMPLETA");
         } catch (Exception e) {
@@ -102,7 +103,7 @@ protected ArrayList<Estanco> estancos;
         String cadSQL;
         int r;
         try {
-            cadSQL = "UPDATE ESTANCOS SET ID_FISCAL = " + aw.getIdFiscal()+ ", NUM_EXPENDIO = " + aw.getNumExpendio()+ ", NOMBRE_ESTANCO = '" + aw.getNombre()+ "', LOCALIDAD = '" + aw.getLocalidad()+ "', PROVINCIA = '" + aw.getProvincia()+ "' WHERE rownum = " + pos + ";";
+            cadSQL = "UPDATE ESTANCOS SET ID_FISCAL = " + aw.getIdFiscal() + ", NUM_EXPENDIO = " + aw.getNumExpendio() + ", NOMBRE_ESTANCO = '" + aw.getNombre() + "', LOCALIDAD = '" + aw.getLocalidad() + "', PROVINCIA = '" + aw.getProvincia() + "' WHERE rownum = " + pos + ";";
             r = statement.executeUpdate(cadSQL);
             System.out.println("ACTUALIZACION COMPLETA");
         } catch (Exception e) {
