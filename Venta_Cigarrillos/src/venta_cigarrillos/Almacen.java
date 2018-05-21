@@ -1,13 +1,19 @@
 package venta_cigarrillos;
 
 public class Almacen {
-    
+
     private int idFiscal;
     private int numCigarrillo;
     private int cantCigarrillo;
     private int numExpendio;
     private String localidad;
     private String nombre;
+
+    public Almacen(int idFiscal, int numCigarrillo, int cantCigarrillo) {
+        this.idFiscal = idFiscal;
+        this.numCigarrillo = numCigarrillo;
+        this.cantCigarrillo = cantCigarrillo;
+    }
 
     public Almacen(int idFiscal, int numCigarrillo, int cantCigarrillo, int numExpendio, String localidad, String nombre) {
         this.idFiscal = idFiscal;
