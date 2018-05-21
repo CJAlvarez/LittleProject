@@ -1,6 +1,8 @@
 package venta_cigarrillos;
 
 
+import java.awt.Dimension;
+import java.awt.Toolkit;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -31,6 +33,10 @@ public class Inicio extends javax.swing.JFrame {
 
         jf_almacen = new javax.swing.JFrame();
         jTabbedPane1 = new javax.swing.JTabbedPane();
+        jPanel4 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jt_almacen = new javax.swing.JTable();
+        jLabel10 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -47,10 +53,6 @@ public class Inicio extends javax.swing.JFrame {
         jb_agregarAlmacen = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jt_numExpendio = new javax.swing.JTextField();
-        jPanel4 = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jt_almacen = new javax.swing.JTable();
-        jLabel10 = new javax.swing.JLabel();
         jt_idFiscal3 = new javax.swing.JTextField();
         pop_tableAlmacen = new javax.swing.JPopupMenu();
         jm_borrar = new javax.swing.JMenuItem();
@@ -238,11 +240,51 @@ public class Inicio extends javax.swing.JFrame {
         jb_pedido = new javax.swing.JButton();
         jb_venta = new javax.swing.JButton();
 
+        jf_almacen.setSize(new Dimension((int)(Toolkit.getDefaultToolkit().getScreenSize().getWidth()/3), (int)(Toolkit.getDefaultToolkit().getScreenSize().getHeight()/2)));
+
         jTabbedPane1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jTabbedPane1MouseClicked(evt);
             }
         });
+
+        jPanel4.setBackground(new java.awt.Color(255, 255, 255));
+
+        jt_almacen.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "ID Fiscal", "Num. Cigarrillos", "Cant. Cigarrillos", "Num. Expendio", "Localidad", "Nombre"
+            }
+        ));
+        jScrollPane1.setViewportView(jt_almacen);
+        if (jt_almacen.getColumnModel().getColumnCount() > 0) {
+            jt_almacen.getColumnModel().getColumn(3).setResizable(false);
+        }
+
+        jLabel10.setFont(new java.awt.Font("MS Reference Sans Serif", 0, 18)); // NOI18N
+        jLabel10.setText("Eliminar/Listar/Modificar almacén");
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane1)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(156, 156, 156)
+                .addComponent(jLabel10)
+                .addContainerGap(162, Short.MAX_VALUE))
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                .addComponent(jLabel10)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 427, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("Eliminar/Listar/Modificar", jPanel4);
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -365,44 +407,6 @@ public class Inicio extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Agregar", jPanel3);
 
-        jPanel4.setBackground(new java.awt.Color(255, 255, 255));
-
-        jt_almacen.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "ID Fiscal", "Num. Cigarrillos", "Cant. Cigarrillos", "Num. Expendio", "Localidad", "Nombre"
-            }
-        ));
-        jScrollPane1.setViewportView(jt_almacen);
-        if (jt_almacen.getColumnModel().getColumnCount() > 0) {
-            jt_almacen.getColumnModel().getColumn(3).setResizable(false);
-        }
-
-        jLabel10.setFont(new java.awt.Font("MS Reference Sans Serif", 0, 18)); // NOI18N
-        jLabel10.setText("Eliminar/Listar/Modificar almacén");
-
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(156, 156, 156)
-                .addComponent(jLabel10)
-                .addContainerGap(162, Short.MAX_VALUE))
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addComponent(jLabel10)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 427, Short.MAX_VALUE))
-        );
-
-        jTabbedPane1.addTab("Eliminar/Listar/Modificar", jPanel4);
-
         javax.swing.GroupLayout jf_almacenLayout = new javax.swing.GroupLayout(jf_almacen.getContentPane());
         jf_almacen.getContentPane().setLayout(jf_almacenLayout);
         jf_almacenLayout.setHorizontalGroup(
@@ -412,8 +416,8 @@ public class Inicio extends javax.swing.JFrame {
         jf_almacenLayout.setVerticalGroup(
             jf_almacenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jf_almacenLayout.createSequentialGroup()
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 487, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 487, Short.MAX_VALUE)
+                .addGap(0, 0, 0))
         );
 
         jt_idFiscal3.setFont(new java.awt.Font("MS Reference Sans Serif", 0, 14)); // NOI18N
@@ -443,6 +447,8 @@ public class Inicio extends javax.swing.JFrame {
             }
         });
         pop_tableAlmacen.add(jm_modificar);
+
+        jf_cigarrillos.setSize(new Dimension((int)(Toolkit.getDefaultToolkit().getScreenSize().getWidth()/3), (int)(Toolkit.getDefaultToolkit().getScreenSize().getHeight()/2)));
 
         jTabbedPane2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -629,8 +635,8 @@ public class Inicio extends javax.swing.JFrame {
         jf_cigarrillosLayout.setHorizontalGroup(
             jf_cigarrillosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jf_cigarrillosLayout.createSequentialGroup()
-                .addComponent(jTabbedPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 736, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addComponent(jTabbedPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 736, Short.MAX_VALUE)
+                .addGap(0, 0, 0))
         );
         jf_cigarrillosLayout.setVerticalGroup(
             jf_cigarrillosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -652,6 +658,8 @@ public class Inicio extends javax.swing.JFrame {
             }
         });
         pop_tableCigarrillo.add(jm_deletCigarrillo);
+
+        jf_compra.setSize(new Dimension((int)(Toolkit.getDefaultToolkit().getScreenSize().getWidth()/3), (int)(Toolkit.getDefaultToolkit().getScreenSize().getHeight()/2)));
 
         jTabbedPane3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -847,6 +855,8 @@ public class Inicio extends javax.swing.JFrame {
             .addComponent(jTabbedPane3)
         );
 
+        jf_estanco.setSize(new Dimension((int)(Toolkit.getDefaultToolkit().getScreenSize().getWidth()/3), (int)(Toolkit.getDefaultToolkit().getScreenSize().getHeight()/2)));
+
         jTabbedPane5.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jTabbedPane5MouseClicked(evt);
@@ -1016,6 +1026,8 @@ public class Inicio extends javax.swing.JFrame {
         });
         pop_tableCompra.add(pop_eliminarc);
 
+        jf_distribuidores.setSize(new Dimension((int)(Toolkit.getDefaultToolkit().getScreenSize().getWidth()/3), (int)(Toolkit.getDefaultToolkit().getScreenSize().getHeight()/2)));
+
         jTabbedPane4.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jTabbedPane4MouseClicked(evt);
@@ -1171,6 +1183,8 @@ public class Inicio extends javax.swing.JFrame {
         });
         pop_tableEstanco.add(jm_modificare);
 
+        jf_fabricantes.setSize(new Dimension((int)(Toolkit.getDefaultToolkit().getScreenSize().getWidth()/3), (int)(Toolkit.getDefaultToolkit().getScreenSize().getHeight()/2)));
+
         jTabbedPane6.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jTabbedPane6MouseClicked(evt);
@@ -1308,7 +1322,7 @@ public class Inicio extends javax.swing.JFrame {
         jf_fabricantes.getContentPane().setLayout(jf_fabricantesLayout);
         jf_fabricantesLayout.setHorizontalGroup(
             jf_fabricantesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 412, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jTabbedPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 412, Short.MAX_VALUE)
         );
         jf_fabricantesLayout.setVerticalGroup(
             jf_fabricantesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1993,7 +2007,7 @@ public class Inicio extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jb_distribuidor, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
+                        .addComponent(jb_distribuidor, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                         .addComponent(jb_marca, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addComponent(jb_almacen, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
