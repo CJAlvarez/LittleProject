@@ -5,6 +5,10 @@ import java.awt.Toolkit;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import Models.*;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -23,7 +27,16 @@ public class Inicio extends javax.swing.JFrame {
         jt_marcaa.setComponentPopupMenu(pop_tableMarca);
         jt_pedido.setComponentPopupMenu(pop_tablePedido);
         jt_venta.setComponentPopupMenu(pop_tableVenta);
+        jf_almacen.pack();
+        jf_cigarrillos.pack();
+        jf_compra.pack();
+        jf_distribuidores.pack();
+        jf_estanco.pack();
+        jf_fabricantes.pack();
+        jf_marca.pack();
+        jf_venta.pack();
 
+        refreshCurrentModels();
     }
 
     @SuppressWarnings("unchecked")
@@ -243,7 +256,7 @@ public class Inicio extends javax.swing.JFrame {
         jb_pedido = new javax.swing.JButton();
         jb_venta = new javax.swing.JButton();
 
-        jf_almacen.setSize(new Dimension((int)(Toolkit.getDefaultToolkit().getScreenSize().getWidth()/3), (int)(Toolkit.getDefaultToolkit().getScreenSize().getHeight()/2)));
+        jf_almacen.setSize(new java.awt.Dimension(0, 0));
 
         jTabbedPane1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -451,7 +464,7 @@ public class Inicio extends javax.swing.JFrame {
         });
         pop_tableAlmacen.add(jm_modificar);
 
-        jf_cigarrillos.setSize(new Dimension((int)(Toolkit.getDefaultToolkit().getScreenSize().getWidth()/3), (int)(Toolkit.getDefaultToolkit().getScreenSize().getHeight()/2)));
+        jf_cigarrillos.setSize(new java.awt.Dimension(0, 0));
 
         jTabbedPane2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -682,7 +695,7 @@ public class Inicio extends javax.swing.JFrame {
         });
         pop_tableCigarrillo.add(jm_deletCigarrillo);
 
-        jf_compra.setSize(new Dimension((int)(Toolkit.getDefaultToolkit().getScreenSize().getWidth()/3), (int)(Toolkit.getDefaultToolkit().getScreenSize().getHeight()/2)));
+        jf_compra.setSize(new java.awt.Dimension(0, 0));
 
         jTabbedPane3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -878,7 +891,7 @@ public class Inicio extends javax.swing.JFrame {
             .addComponent(jTabbedPane3)
         );
 
-        jf_estanco.setSize(new Dimension((int)(Toolkit.getDefaultToolkit().getScreenSize().getWidth()/3), (int)(Toolkit.getDefaultToolkit().getScreenSize().getHeight()/2)));
+        jf_estanco.setSize(new java.awt.Dimension(0, 0));
 
         jTabbedPane5.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -1049,7 +1062,7 @@ public class Inicio extends javax.swing.JFrame {
         });
         pop_tableCompra.add(pop_eliminarc);
 
-        jf_distribuidores.setSize(new Dimension((int)(Toolkit.getDefaultToolkit().getScreenSize().getWidth()/3), (int)(Toolkit.getDefaultToolkit().getScreenSize().getHeight()/2)));
+        jf_distribuidores.setSize(new java.awt.Dimension(0, 0));
 
         jTabbedPane4.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -1206,7 +1219,7 @@ public class Inicio extends javax.swing.JFrame {
         });
         pop_tableEstanco.add(jm_modificare);
 
-        jf_fabricantes.setSize(new Dimension((int)(Toolkit.getDefaultToolkit().getScreenSize().getWidth()/3), (int)(Toolkit.getDefaultToolkit().getScreenSize().getHeight()/2)));
+        jf_fabricantes.setSize(new java.awt.Dimension(0, 0));
 
         jTabbedPane6.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -1368,6 +1381,8 @@ public class Inicio extends javax.swing.JFrame {
         });
         pop_tableFabricante.add(jm_modificarf);
 
+        jf_marca.setSize(new java.awt.Dimension(0, 0));
+
         jTabbedPane7.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jTabbedPane7MouseClicked(evt);
@@ -1506,6 +1521,8 @@ public class Inicio extends javax.swing.JFrame {
             .addComponent(jTabbedPane7)
         );
 
+        jf_pedido.setSize(new java.awt.Dimension(0, 0));
+
         jTabbedPane8.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jTabbedPane8MouseClicked(evt);
@@ -1635,6 +1652,8 @@ public class Inicio extends javax.swing.JFrame {
             jf_pedidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jTabbedPane8)
         );
+
+        jf_venta.setSize(new java.awt.Dimension(0, 0));
 
         jTabbedPane9.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -2096,6 +2115,7 @@ public class Inicio extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Hay campos vacios, por favor ingrese la información necesaria");
         } else {
             a = new Almacen(idFiscal, numCigarrillo, cantCigarrillo, numExpendio, localidad, nombre);
+
             almacen.add(a);
             JOptionPane.showMessageDialog(jf_almacen, "Almacén agregado!");
 
@@ -2752,7 +2772,7 @@ public class Inicio extends javax.swing.JFrame {
         idFabricante = (Integer) js_idfabricantem.getValue();
         nombre = jt_nombrem.getText();
         m = new Manufactura(idFabricante, nombre);
-        marca.add(m);
+        manufactura.add(m);
 
         js_idfabricantem.setValue(0);
         jt_nombrem.setText("");
@@ -2773,8 +2793,8 @@ public class Inicio extends javax.swing.JFrame {
             model.removeRow(i);
         }
 
-        for (int i = 0; i < marca.size(); i++) {
-            Object[] newRow = new Object[]{marca.get(i).getIdFabricante(), marca.get(i).getMarca()};
+        for (int i = 0; i < manufactura.size(); i++) {
+            Object[] newRow = new Object[]{manufactura.get(i).getIdFabricante(), manufactura.get(i).getMarca()};
             model.addRow(newRow);
             jt_marcaa.setModel(model);
         }
@@ -2784,7 +2804,7 @@ public class Inicio extends javax.swing.JFrame {
         // ELIMINAR MARCA
         DefaultTableModel model = (DefaultTableModel) jt_marcaa.getModel();
         if (jt_marcaa.getSelectedRow() >= 0) {
-            marca.remove(jt_marcaa.getSelectedRow());
+            manufactura.remove(jt_marcaa.getSelectedRow());
             model.removeRow(jt_marcaa.getSelectedRow());
 
             jt_marcaa.updateUI();
@@ -2813,8 +2833,8 @@ public class Inicio extends javax.swing.JFrame {
             }
 
             if (a == true) {
-                marca.get(jt_marcaa.getSelectedRow()).setIdFabricante(idFabricante);
-                marca.get(jt_marcaa.getSelectedRow()).setMarca(nombre);
+                manufactura.get(jt_marcaa.getSelectedRow()).setIdFabricante(idFabricante);
+                manufactura.get(jt_marcaa.getSelectedRow()).setMarca(nombre);
 
                 JOptionPane.showMessageDialog(jf_marca, "¡Campo modificado exitosamente, para ver tus cambios refresca la tabla!");
             } else {
@@ -3048,7 +3068,7 @@ public class Inicio extends javax.swing.JFrame {
     ArrayList<Distribuidor> distribuidor = new ArrayList();
     ArrayList<Estanco> estanco = new ArrayList();
     ArrayList<Fabricante> fabricante = new ArrayList();
-    ArrayList<Manufactura> marca = new ArrayList();
+    ArrayList<Manufactura> manufactura = new ArrayList();
     ArrayList<Pedido> pedido = new ArrayList();
     ArrayList<Venta> venta = new ArrayList();
 
@@ -3266,5 +3286,70 @@ public class Inicio extends javax.swing.JFrame {
     private javax.swing.JPopupMenu pop_tablePedido;
     private javax.swing.JPopupMenu pop_tableVenta;
     // End of variables declaration//GEN-END:variables
+
+    // METODOS PARA LOS MODELOS
+    ModelAlmacen mAl = new ModelAlmacen();
+    ModelCigarrillo mCig = new ModelCigarrillo();
+    ModelCompra mComp = new ModelCompra();
+    ModelEstanco mEst = new ModelEstanco();
+    ModelFabricante mFab = new ModelFabricante();
+    ModelManufactura mMan = new ModelManufactura();
+    ModelVenta mVen = new ModelVenta();
+
+    private void refreshCurrentModels() {
+        try {
+            mAl.read();
+            almacen = mAl.getAlmacenes();
+        } catch (Exception e) {
+            System.out.println("ERROR_REFRESHCURRENTMODELS: ALMACEN_READ");
+        }
+        try {
+            mCig.read();
+            cigarrillo = mCig.getCigarrillos();
+        } catch (Exception e) {
+            System.out.println("ERROR_REFRESHCURRENTMODELS: CIGARRILLO_READ");
+        }
+        try {
+            mComp.read();
+            compra = mComp.getCompras();
+        } catch (Exception e) {
+            System.out.println("ERROR_REFRESHCURRENTMODELS: COMPRAS_READ");
+        }
+        try {
+            mEst.read();
+            estanco = mEst.getEstancos();
+        } catch (Exception e) {
+            System.out.println("ERROR_REFRESHCURRENTMODELS: ESTANCO_READ");
+        }
+        try {
+            mFab.read();
+            fabricante = mFab.getFabricantes();
+        } catch (Exception e) {
+            System.out.println("ERROR_REFRESHCURRENTMODELS: FABRICANTE_READ");
+        }
+        try {
+            mMan.read();
+            manufactura = mMan.getManufacturas();
+        } catch (Exception e) {
+            System.out.println("ERROR_REFRESHCURRENTMODELS: MANUFACTURA_READ");
+        }
+        try {
+            mVen.read();
+            venta = mVen.getVentas();
+        } catch (Exception e) {
+            System.out.println("ERROR_REFRESHCURRENTMODELS: VENTAS_READ");
+        }
+    }
+    /*
+    ArrayList<Almacen> almacen = new ArrayList();
+    ArrayList<Cigarrillo> cigarrillo = new ArrayList();
+    ArrayList<Compra> compra = new ArrayList();
+    ArrayList<Distribuidor> distribuidor = new ArrayList();
+    ArrayList<Estanco> estanco = new ArrayList();
+    ArrayList<Fabricante> fabricante = new ArrayList();
+    ArrayList<Manufactura> manufactura = new ArrayList();
+    ArrayList<Pedido> pedido = new ArrayList();
+    ArrayList<Venta> venta = new ArrayList();
+     */
 
 }

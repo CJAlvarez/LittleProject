@@ -4,8 +4,8 @@
   <NonVisualComponents>
     <Container class="javax.swing.JFrame" name="jf_almacen">
       <Properties>
-        <Property name="size" type="java.awt.Dimension" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-          <Connection code="new Dimension((int)(Toolkit.getDefaultToolkit().getScreenSize().getWidth()/3), (int)(Toolkit.getDefaultToolkit().getScreenSize().getHeight()/2))" type="code"/>
+        <Property name="size" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[0, 0]"/>
         </Property>
       </Properties>
 
@@ -401,8 +401,8 @@
     </Container>
     <Container class="javax.swing.JFrame" name="jf_cigarrillos">
       <Properties>
-        <Property name="size" type="java.awt.Dimension" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-          <Connection code="new Dimension((int)(Toolkit.getDefaultToolkit().getScreenSize().getWidth()/3), (int)(Toolkit.getDefaultToolkit().getScreenSize().getHeight()/2))" type="code"/>
+        <Property name="size" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[0, 0]"/>
         </Property>
       </Properties>
 
@@ -882,8 +882,8 @@
     </Container>
     <Container class="javax.swing.JFrame" name="jf_compra">
       <Properties>
-        <Property name="size" type="java.awt.Dimension" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-          <Connection code="new Dimension((int)(Toolkit.getDefaultToolkit().getScreenSize().getWidth()/3), (int)(Toolkit.getDefaultToolkit().getScreenSize().getHeight()/2))" type="code"/>
+        <Property name="size" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[0, 0]"/>
         </Property>
       </Properties>
 
@@ -1272,8 +1272,8 @@
     </Container>
     <Container class="javax.swing.JFrame" name="jf_estanco">
       <Properties>
-        <Property name="size" type="java.awt.Dimension" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-          <Connection code="new Dimension((int)(Toolkit.getDefaultToolkit().getScreenSize().getWidth()/3), (int)(Toolkit.getDefaultToolkit().getScreenSize().getHeight()/2))" type="code"/>
+        <Property name="size" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[0, 0]"/>
         </Property>
       </Properties>
 
@@ -1601,8 +1601,8 @@
     </Container>
     <Container class="javax.swing.JFrame" name="jf_distribuidores">
       <Properties>
-        <Property name="size" type="java.awt.Dimension" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-          <Connection code="new Dimension((int)(Toolkit.getDefaultToolkit().getScreenSize().getWidth()/3), (int)(Toolkit.getDefaultToolkit().getScreenSize().getHeight()/2))" type="code"/>
+        <Property name="size" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[0, 0]"/>
         </Property>
       </Properties>
 
@@ -1884,8 +1884,8 @@
     </Container>
     <Container class="javax.swing.JFrame" name="jf_fabricantes">
       <Properties>
-        <Property name="size" type="java.awt.Dimension" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-          <Connection code="new Dimension((int)(Toolkit.getDefaultToolkit().getScreenSize().getWidth()/3), (int)(Toolkit.getDefaultToolkit().getScreenSize().getHeight()/2))" type="code"/>
+        <Property name="size" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[0, 0]"/>
         </Property>
       </Properties>
 
@@ -2189,6 +2189,11 @@
       </SubComponents>
     </Container>
     <Container class="javax.swing.JFrame" name="jf_marca">
+      <Properties>
+        <Property name="size" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[0, 0]"/>
+        </Property>
+      </Properties>
 
       <Layout>
         <DimensionLayout dim="0">
@@ -2439,6 +2444,11 @@
       </SubComponents>
     </Container>
     <Container class="javax.swing.JFrame" name="jf_pedido">
+      <Properties>
+        <Property name="size" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[0, 0]"/>
+        </Property>
+      </Properties>
 
       <Layout>
         <DimensionLayout dim="0">
@@ -2668,6 +2678,11 @@
       </SubComponents>
     </Container>
     <Container class="javax.swing.JFrame" name="jf_venta">
+      <Properties>
+        <Property name="size" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[0, 0]"/>
+        </Property>
+      </Properties>
 
       <Layout>
         <DimensionLayout dim="0">
