@@ -1,7 +1,6 @@
 package Models;
 
 import java.sql.*;
-
 /**
  *
  * @author CJ
@@ -35,83 +34,22 @@ public abstract class Model {
         }
     }
 
-    public abstract String read() throws SQLException;
-    /*
-        statement = connection.createStatement();
-        String cadSQL;
+    protected void disconnect() {
         try {
-            cadSQL = "SELECT * FROM #######";
-            ResultSet rs = statement.executeQuery(cadSQL);
-            String data = "";
-            while (rs.next()) {
-                data += (rs.getString("ID") + "");
-            }
-            System.out.println("LECTURA COMPLETA");
-            return data;
-        } catch (Exception e) {
-            System.err.println("ERROR_READ");
+            connection.close();
+            System.out.println("CONEXION CERRADA");
+        } catch (SQLException e) {
+            System.out.println("CONEXION NO CERRADA");
         }
-        return null;
-    */
+    }
 
-    public abstract void write() throws SQLException;
-        /*
-        statement = connection.createStatement();
-        String cadSQL;
-        int r;
-        try {
-            cadSQL = "INSERT INTO ####### values ('" + "', '" + "')";
-            r = statement.executeUpdate(cadSQL);
-            System.out.println("ESCRITURA COMPLETA");
-        } catch (Exception e) {
-            System.err.println("ERROR_WRITE");
-        }
-    */
+    public abstract void read() throws SQLException;
 
-    public abstract String search() throws SQLException;
-            /*
-        statement = connection.createStatement();
-        String cadSQL;
-        try {
-            cadSQL = "SELECT * FROM ####### WHERE ID = '" + "'";
-            ResultSet rs = statement.executeQuery(cadSQL);
-            String data = "";
-            while (rs.next()) {
-                data += (rs.getString("ID") + "");
-            }
-            System.out.println("BUSQUEDA COMPLETA");
-            return data;
-        } catch (Exception e) {
-            System.err.println("ERROR_SEARCH");
-        }
-        return null;
-    */
-    
-    public abstract void delete() throws SQLException;
-        /*
-        statement = connection.createStatement();
-        String cadSQL;
-        int r;
-        try {
-            cadSQL = "DELETE FROM ####### WHERE ID = '" + "'";
-            r = statement.executeUpdate(cadSQL);
-            
-        } catch (Exception e) {
-            System.err.println("ERROR_DELETE");
-        }
-        */
-    
-    public abstract void update() throws SQLException;
-    /*
-        statement = connection.createStatement();
-        String cadSQL;
-        int r;
-        try {
-            cadSQL = "UPDATE ####### SET ID = '" = "' WHERE ID = '" = "'";
-            r = statement.executeUpdate(cadSQL);
-            System.out.println("ACTUALIZACION COMPLETA");
-        } catch (Exception e) {
-            System.err.println("ERROR_UPDATE");
-        }
-    */
+    public abstract void write(Object o) throws SQLException;
+
+    public abstract void search() throws SQLException;
+
+    public abstract void delete(int pos) throws SQLException;
+
+    public abstract void update(Object o, int pos) throws SQLException;
 }
