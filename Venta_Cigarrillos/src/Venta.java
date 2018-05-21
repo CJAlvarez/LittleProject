@@ -1,17 +1,17 @@
 public class Venta {
     private int idVenta;
     private int idFiscal;
-    private String tipo; // Verificar.
-    private int totalTipo;
+    private int numCigarrillo; 
+    private int totalNumCigarrillo;
     private int diaVenta;
     private int mesVenta;
     private int añoVenta;
 
-    public Venta(int idVenta, int idFiscal, String tipo, int totalTipo, int diaVenta, int mesVenta, int añoVenta) {
+    public Venta(int idVenta, int idFiscal, int totalNumCigarrillo, int numCigarrillo, int diaVenta, int mesVenta, int añoVenta) {
         this.idVenta = idVenta;
         this.idFiscal = idFiscal;
-        this.tipo = tipo;
-        this.totalTipo = totalTipo;
+        this.totalNumCigarrillo= totalNumCigarrillo;
+        this.numCigarrillo= numCigarrillo;
         this.diaVenta = diaVenta;
         this.mesVenta = mesVenta;
         this.añoVenta = añoVenta;
@@ -33,21 +33,23 @@ public class Venta {
         this.idFiscal = idFiscal;
     }
 
-    public String getTipo() {
-        return tipo;
+    public int getNumCigarrillo() {
+        return numCigarrillo;
     }
 
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
+    public void setNumCigarrillo(int numCigarrillo) {
+        this.numCigarrillo = numCigarrillo;
     }
 
-    public int getTotalTipo() {
-        return totalTipo;
+    public int getTotalNumCigarrillo() {
+        return totalNumCigarrillo;
     }
 
-    public void setTotalTipo(int totalTipo) {
-        this.totalTipo = totalTipo;
+    public void setTotalNumCigarrillo(int totalNumCigarrillo) {
+        this.totalNumCigarrillo = totalNumCigarrillo;
     }
+
+   
 
     public int getDiaVenta() {
         return diaVenta;
@@ -73,8 +75,5 @@ public class Venta {
         this.añoVenta = añoVenta;
     }
 
-    @Override
-    public String toString() {
-        return "Venta{" + "idVenta=" + idVenta + ", idFiscal=" + idFiscal + ", tipo=" + tipo + ", totalTipo=" + totalTipo + ", diaVenta=" + diaVenta + ", mesVenta=" + mesVenta + ", a\u00f1oVenta=" + añoVenta + '}';
-    }
+
 }

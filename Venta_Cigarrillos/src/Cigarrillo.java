@@ -1,17 +1,21 @@
 public class Cigarrillo {
     
     private int numCigarrillo;
-    private boolean filtro;
+    private char filtro;
     private String colorHoja;
-    private float cantContaminante;
+    private int alquitran;
+    private int nicotina;
     private String marca;
+    private char mentol;
 
-    public Cigarrillo(int numCigarrillo, boolean filtro, String colorHoja, float cantContaminante, String marca) {
+    public Cigarrillo(int numCigarrillo, char filtro, String colorHoja, int alquitran, int nicotina, String marca, char mentol) {
         this.numCigarrillo = numCigarrillo;
         this.filtro = filtro;
         this.colorHoja = colorHoja;
-        this.cantContaminante = cantContaminante;
+        this.alquitran = alquitran;
+        this.nicotina = nicotina;
         this.marca = marca;
+        this.mentol = mentol;
     }
 
     public int getNumCigarrillo() {
@@ -22,11 +26,11 @@ public class Cigarrillo {
         this.numCigarrillo = numCigarrillo;
     }
 
-    public boolean isFiltro() {
+    public char getFiltro() {
         return filtro;
     }
 
-    public void setFiltro(boolean filtro) {
+    public void setFiltro(char filtro) {
         this.filtro = filtro;
     }
 
@@ -38,12 +42,20 @@ public class Cigarrillo {
         this.colorHoja = colorHoja;
     }
 
-    public float getCantContaminante() {
-        return cantContaminante;
+    public int getAlquitran() {
+        return alquitran;
     }
 
-    public void setCantContaminante(float cantContaminante) {
-        this.cantContaminante = cantContaminante;
+    public void setAlquitran(int alquitran) {
+        this.alquitran = alquitran;
+    }
+
+    public int getNicotina() {
+        return nicotina;
+    }
+
+    public void setNicotina(int nicotina) {
+        this.nicotina = nicotina;
     }
 
     public String getMarca() {
@@ -54,8 +66,13 @@ public class Cigarrillo {
         this.marca = marca;
     }
 
-    @Override
-    public String toString() {
-        return "Cigarrillo{" + "numCigarrillo=" + numCigarrillo + ", filtro=" + filtro + ", colorHoja=" + colorHoja + ", cantContaminante=" + cantContaminante + ", marca=" + marca + '}';
+    public char getMentol() {
+        return mentol;
     }
+
+    public void setMentol(char mentol) {
+        this.mentol = mentol;
+    }
+
+    
 }

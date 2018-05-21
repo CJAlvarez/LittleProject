@@ -2,17 +2,17 @@ public class Compra {
     
     private int idCompra;
     private int idFiscal;
-    private String tipo;
-    private int totalTipo;
+    private int numCigarrillo;
+    private int totalNumCigarrillo;
     private int diaCompra;
     private int mesCompra;
     private int añoCompra;
 
-    public Compra(int idCompra, int idFiscal, String tipo, int totalTipo, int diaCompra, int mesCompra, int añoCompra) {
+    public Compra(int idCompra, int idFiscal, int numCigarrillo, int totalNumCigarrillo, int diaCompra, int mesCompra, int añoCompra) {
         this.idCompra = idCompra;
         this.idFiscal = idFiscal;
-        this.tipo = tipo;
-        this.totalTipo = totalTipo;
+        this.numCigarrillo = numCigarrillo;
+        this.totalNumCigarrillo = totalNumCigarrillo;
         this.diaCompra = diaCompra;
         this.mesCompra = mesCompra;
         this.añoCompra = añoCompra;
@@ -34,22 +34,23 @@ public class Compra {
         this.idFiscal = idFiscal;
     }
 
-    public String getTipo() {
-        return tipo;
+    public int getNumCigarrillo() {
+        return numCigarrillo;
     }
 
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
+    public void setNumCigarrillo(int numCigarrillo) {
+        this.numCigarrillo = numCigarrillo;
     }
 
-    public int getTotalTipo() {
-        return totalTipo;
+    public int getTotalNumCigarrillo() {
+        return totalNumCigarrillo;
     }
 
-    public void setTotalTipo(int totalTipo) {
-        this.totalTipo = totalTipo;
+    public void setTotalNumCigarrillo(int totalNumCigarrillo) {
+        this.totalNumCigarrillo = totalNumCigarrillo;
     }
 
+   
     public int getDiaCompra() {
         return diaCompra;
     }
@@ -74,8 +75,5 @@ public class Compra {
         this.añoCompra = añoCompra;
     }
 
-    @Override
-    public String toString() {
-        return "Compra{" + "idCompra=" + idCompra + ", idFiscal=" + idFiscal + ", tipo=" + tipo + ", totalTipo=" + totalTipo + ", diaCompra=" + diaCompra + ", mesCompra=" + mesCompra + ", a\u00f1oCompra=" + añoCompra + '}';
-    }
+
 }
