@@ -1,3 +1,5 @@
+package venta_cigarrillos;
+
 public class Cigarrillo {
     
     private int numCigarrillo;

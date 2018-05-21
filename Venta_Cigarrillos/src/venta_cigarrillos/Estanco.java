@@ -1,3 +1,5 @@
+package venta_cigarrillos;
+
 public class Estanco {
     
     private int idFiscal;

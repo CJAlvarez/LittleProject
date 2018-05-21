@@ -1,3 +1,5 @@
+package venta_cigarrillos;
+
 public class Distribuidor {
     
     private int idCompra;

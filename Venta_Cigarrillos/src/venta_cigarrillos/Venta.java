@@ -1,3 +1,5 @@
+package venta_cigarrillos;
+
 public class Venta {
     private int idVenta;
     private int idFiscal;
