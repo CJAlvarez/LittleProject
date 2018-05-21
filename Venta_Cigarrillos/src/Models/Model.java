@@ -35,8 +35,69 @@ public abstract class Model {
         }
     }
 
-    public String read() throws SQLException {
+    public abstract String read() throws SQLException;
+    /*
+        statement = connection.createStatement();
+        String cadSQL;
+        try {
+            cadSQL = "SELECT * FROM #######";
+            ResultSet rs = statement.executeQuery(cadSQL);
+            String data = "";
+            while (rs.next()) {
+                data += (rs.getString("ID") + "");
+            }
+            System.out.println("LECTURA COMPLETA");
+            return data;
+        } catch (Exception e) {
+            System.err.println("ERROR_READ");
+        }
         return null;
-    }
+    */
 
+    public abstract void write() throws SQLException;
+        /*
+        statement = connection.createStatement();
+        String cadSQL;
+        int r;
+        try {
+            cadSQL = "INSERT INTO ####### values ('" + "', '" + "')";
+            r = statement.executeUpdate(cadSQL);
+            System.out.println("ESCRITURA COMPLETA");
+        } catch (Exception e) {
+            System.err.println("ERROR_WRITE");
+        }
+    */
+
+    public abstract String search() throws SQLException;
+            /*
+        statement = connection.createStatement();
+        String cadSQL;
+        try {
+            cadSQL = "SELECT * FROM ####### WHERE ID = '" + "'";
+            ResultSet rs = statement.executeQuery(cadSQL);
+            String data = "";
+            while (rs.next()) {
+                data += (rs.getString("ID") + "");
+            }
+            System.out.println("BUSQUEDA COMPLETA");
+            return data;
+        } catch (Exception e) {
+            System.err.println("ERROR_SEARCH");
+        }
+        return null;
+    */
+    
+    public abstract void delete() throws SQLException;
+        /*
+        statement = connection.createStatement();
+        String cadSQL;
+        int r;
+        try {
+            cadSQL = "DELETE FROM ####### WHERE ID = '" + "'";
+            r = statement.executeUpdate(cadSQL);
+            
+        } catch (Exception e) {
+            System.err.println("ERROR_DELETE");
+        }
+        */
 }
