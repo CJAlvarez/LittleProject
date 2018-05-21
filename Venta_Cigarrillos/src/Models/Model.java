@@ -1,6 +1,7 @@
 package Models;
 
 import java.sql.*;
+
 /**
  *
  * @author CJ
@@ -24,13 +25,14 @@ public abstract class Model {
 
     }
 
-    public void connect() {
+    public void connect() throws Exception {
         try {
             Class.forName("oracle.jdbc.OracleDriver").newInstance();
             connection = DriverManager.getConnection(url, user, password);
             System.out.println("CONEXION ESTABLECIDA");
         } catch (Exception e) {
             System.err.println("CONEXION NO ESTABLECIDA");
+            //throw new Exception("CONEXION NO ESTABLECIDA");
         }
     }
 

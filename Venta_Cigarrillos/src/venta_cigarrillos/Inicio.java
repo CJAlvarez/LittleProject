@@ -27,6 +27,7 @@ public class Inicio extends javax.swing.JFrame {
         jt_marcaa.setComponentPopupMenu(pop_tableMarca);
         jt_pedido.setComponentPopupMenu(pop_tablePedido);
         jt_venta.setComponentPopupMenu(pop_tableVenta);
+        this.pack();
         jf_almacen.pack();
         jf_cigarrillos.pack();
         jf_compra.pack();
@@ -35,6 +36,23 @@ public class Inicio extends javax.swing.JFrame {
         jf_fabricantes.pack();
         jf_marca.pack();
         jf_venta.pack();
+        jf_almacen.pack();
+        jf_cigarrillos.pack();
+        jf_compra.pack();
+        jf_distribuidores.pack();
+        jf_estanco.pack();
+        jf_fabricantes.pack();
+        jf_marca.pack();
+        jf_venta.pack();
+        this.setLocationRelativeTo(null);
+        jf_almacen.setLocationRelativeTo(null);
+        jf_cigarrillos.setLocationRelativeTo(null);
+        jf_compra.setLocationRelativeTo(null);
+        jf_distribuidores.setLocationRelativeTo(null);
+        jf_estanco.setLocationRelativeTo(null);
+        jf_fabricantes.setLocationRelativeTo(null);
+        jf_marca.setLocationRelativeTo(null);
+        jf_venta.setLocationRelativeTo(null);
 
         refreshCurrentModels();
     }
@@ -3340,16 +3358,5 @@ public class Inicio extends javax.swing.JFrame {
             System.out.println("ERROR_REFRESHCURRENTMODELS: VENTAS_READ");
         }
     }
-    /*
-    ArrayList<Almacen> almacen = new ArrayList();
-    ArrayList<Cigarrillo> cigarrillo = new ArrayList();
-    ArrayList<Compra> compra = new ArrayList();
-    ArrayList<Distribuidor> distribuidor = new ArrayList();
-    ArrayList<Estanco> estanco = new ArrayList();
-    ArrayList<Fabricante> fabricante = new ArrayList();
-    ArrayList<Manufactura> manufactura = new ArrayList();
-    ArrayList<Pedido> pedido = new ArrayList();
-    ArrayList<Venta> venta = new ArrayList();
-     */
 
 }
