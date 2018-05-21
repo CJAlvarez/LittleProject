@@ -18,8 +18,8 @@ public class ModelCigarrillo extends Model {
         this.cigarrillos = new ArrayList();
     }
 
-    public ModelCigarrillo(ArrayList<Cigarrillo> almacenes) {
-        this.cigarrillos = almacenes;
+    public ModelCigarrillo(ArrayList<Cigarrillo> cigarrillos) {
+        this.cigarrillos = cigarrillos;
     }
 
     @Override
@@ -103,7 +103,7 @@ public class ModelCigarrillo extends Model {
         String cadSQL;
         int r;
         try {
-            cadSQL = "UPDATE CIGARRILLO SET NUM_CIGA = " + aw.getNumCigarrillo() + ", FILTRO = " + aw.getFiltro() + ", COLORHOJA = " + aw.getColorHoja() + ", MENTOL = " + aw.getMentol() + ", MARCA = " + aw.getMarca() + ", ALQUITRAN = " + aw.getAlquitran() + ", NICOTINA = " + aw.getNicotina() + ", PREVENTA = " + aw.getPrecio_v() + ", PRECOMPRA = " + aw.getPrecio_c() + ", CLASE = " + aw.getClase() + " WHERE rownum = " + pos + ";";
+            cadSQL = "UPDATE CIGARRILLO SET NUM_CIGA = " + aw.getNumCigarrillo() + ", FILTRO = '" + aw.getFiltro() + "', COLORHOJA = '" + aw.getColorHoja() + "', MENTOL = '" + aw.getMentol() + "', MARCA = '" + aw.getMarca() + "', ALQUITRAN = " + aw.getAlquitran() + ", NICOTINA = " + aw.getNicotina() + ", PREVENTA = " + aw.getPrecio_v() + ", PRECOMPRA = " + aw.getPrecio_c() + ", CLASE = '" + aw.getClase() + "' WHERE rownum = " + pos + ";";
             r = statement.executeUpdate(cadSQL);
             System.out.println("ACTUALIZACION COMPLETA");
         } catch (Exception e) {
@@ -111,11 +111,11 @@ public class ModelCigarrillo extends Model {
         }
     }
 
-    public ArrayList<Cigarrillo> getCigarrilloes() {
+    public ArrayList<Cigarrillo> getCigarrillos() {
         return cigarrillos;
     }
 
-    public void setCigarrilloes(ArrayList<Cigarrillo> almacenes) {
+    public void setCigarrillos(ArrayList<Cigarrillo> almacenes) {
         this.cigarrillos = almacenes;
     }
 }

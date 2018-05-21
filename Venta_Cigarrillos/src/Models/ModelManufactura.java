@@ -4,21 +4,21 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
-import venta_cigarrillos.Estanco;
+import venta_cigarrillos.Distribuidor;
 
 /**
  *
  * @author CJ
  */
-public class ModelEstanco extends Model {
-protected ArrayList<Estanco> estancos;
+public class ModelManufactura extends Model {
+    protected ArrayList<Distribuidor> compras;
 
-    public ModelEstanco() {
-        this.estancos = new ArrayList();
+    public ModelManufactura() {
+        this.compras = new ArrayList();
     }
 
-    public ModelEstanco(ArrayList<Estanco> estancos) {
-        this.estancos = estancos;
+    public ModelManufactura(ArrayList<Distribuidor> compras) {
+        this.compras = compras;
     }
 
     @Override
@@ -26,13 +26,13 @@ protected ArrayList<Estanco> estancos;
         super.connect();
         statement = connection.createStatement();
         String cons;
-        estancos = new ArrayList();
+        compras = new ArrayList();
         try {
-            cons = "SELECT * FROM ESTANCOS;";
+            cons = "SELECT * FROM COMPRAS;";
             ResultSet rs = statement.executeQuery(cons);
             while (rs.next()) {
-                Estanco estanco = new Estanco(rs.getInt("ID_FISCAL"), rs.getInt("NUM_EXPENDIO"), rs.getString("LOCALIDAD"), rs.getString("NOMBRE_ESTANCO"), rs.getString("PROVINCIA"));
-                estancos.add(estanco);
+                Distribuidor distribuidor = new Distribuidor(rs.getInt("IDCOMPRA"), rs.getInt("IDFISCAL"), rs.getInt("NUM_CIGA"), rs.getInt("CANT_CIGA"), rs.getDate("FECHACOMPRA"));
+                compras.add(distribuidor);
             }
             System.out.println("LECTURA COMPLETA");
         } catch (Exception e) {
@@ -44,12 +44,12 @@ protected ArrayList<Estanco> estancos;
     @Override
     public void write(Object o) throws SQLException {
         super.connect();
-        Estanco cw = (Estanco) o;
+        Distribuidor cw = (Distribuidor) o;
         statement = connection.createStatement();
         String cadSQL;
         int r;
         try {
-            cadSQL = "INSERT INTO ESTANCOS values (" + cw.getIdFiscal()+ ", " + cw.getNumExpendio()+ ", '" + cw.getNombre()+ "', '" + cw.getLocalidad()+ "', '" + cw.getProvincia()+ "');";
+            cadSQL = "INSERT INTO COMPRAS values (" + cw.getIdDistribuidor() + ", " + cw.getNumCigarrillo() + ", " + cw.getFecha() + ", " + cw.getTotalNumCigarrillo() + ", " + cw.getIdFiscal() + ");";
             r = statement.executeUpdate(cadSQL);
             System.out.println("ESCRITURA COMPLETA");
         } catch (Exception e) {
@@ -63,7 +63,7 @@ protected ArrayList<Estanco> estancos;
         super.connect();
         statement = connection.createStatement();
         String cons;
-        estancos = new ArrayList();
+        compras = new ArrayList();
         try {
             cons = "SELECT * FROM CIGARRILLO WHERE ";
             ResultSet rs = statement.executeQuery(cons);
@@ -86,7 +86,7 @@ protected ArrayList<Estanco> estancos;
         String cadSQL;
         int r;
         try {
-            cadSQL = "DELETE FROM ESTANCOS WHERE rownum = " + pos;
+            cadSQL = "DELETE FROM COMPRAS WHERE rownum = " + pos;
             r = statement.executeUpdate(cadSQL);
         } catch (Exception e) {
             System.err.println("ERROR_DELETE");
@@ -97,12 +97,12 @@ protected ArrayList<Estanco> estancos;
     @Override
     public void update(Object o, int pos) throws SQLException {
         super.connect();
-        Estanco aw = (Estanco) o;
+        Distribuidor aw = (Distribuidor) o;
         statement = connection.createStatement();
         String cadSQL;
         int r;
         try {
-            cadSQL = "UPDATE ESTANCOS SET ID_FISCAL = " + aw.getIdFiscal()+ ", NUM_EXPENDIO = " + aw.getNumExpendio()+ ", NOMBRE_ESTANCO = '" + aw.getNombre()+ "', LOCALIDAD = '" + aw.getLocalidad()+ "', PROVINCIA = '" + aw.getProvincia()+ "' WHERE rownum = " + pos + ";";
+            cadSQL = "UPDATE COMPRAS SET IDCOMPRA = " + aw.getIdDistribuidor() + ", NUM_CIGA = " + aw.getNumCigarrillo() + ", FECHACOMPRA = " + aw.getFecha() + ", CANT_CIGA = " + aw.getTotalNumCigarrillo() + ", IDFISCAL = " + aw.getIdFiscal() + " WHERE rownum = " + pos + ";";
             r = statement.executeUpdate(cadSQL);
             System.out.println("ACTUALIZACION COMPLETA");
         } catch (Exception e) {
@@ -110,11 +110,11 @@ protected ArrayList<Estanco> estancos;
         }
     }
 
-    public ArrayList<Estanco> getEstancos() {
-        return estancos;
+    public ArrayList<Distribuidor> getDistribuidors() {
+        return compras;
     }
 
-    public void setEstancos(ArrayList<Estanco> estancos) {
-        this.estancos = estancos;
+    public void setDistribuidors(ArrayList<Distribuidor> almacenes) {
+        this.compras = almacenes;
     }
 }

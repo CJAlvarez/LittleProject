@@ -1,7 +1,9 @@
 package venta_cigarrillos;
 
+import java.sql.Date;
+
 public class Compra {
-    
+
     private int idCompra;
     private int idFiscal;
     private int numCigarrillo;
@@ -9,6 +11,15 @@ public class Compra {
     private int diaCompra;
     private int mesCompra;
     private int añoCompra;
+    private Date date;
+
+    public Compra(int idCompra, int idFiscal, int numCigarrillo, int totalNumCigarrillo, Date date) {
+        this.idCompra = idCompra;
+        this.idFiscal = idFiscal;
+        this.numCigarrillo = numCigarrillo;
+        this.totalNumCigarrillo = totalNumCigarrillo;
+        this.date = date;
+    }
 
     public Compra(int idCompra, int idFiscal, int numCigarrillo, int totalNumCigarrillo, int diaCompra, int mesCompra, int añoCompra) {
         this.idCompra = idCompra;
@@ -52,7 +63,6 @@ public class Compra {
         this.totalNumCigarrillo = totalNumCigarrillo;
     }
 
-   
     public int getDiaCompra() {
         return diaCompra;
     }
@@ -77,5 +87,12 @@ public class Compra {
         this.añoCompra = añoCompra;
     }
 
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
 
 }

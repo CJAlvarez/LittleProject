@@ -11,14 +11,15 @@ import venta_cigarrillos.Compra;
  * @author CJ
  */
 public class ModelCompra extends Model {
-protected ArrayList<Compra> compras;
+
+    protected ArrayList<Compra> compras;
 
     public ModelCompra() {
         this.compras = new ArrayList();
     }
 
-    public ModelCompra(ArrayList<Compra> almacenes) {
-        this.compras = almacenes;
+    public ModelCompra(ArrayList<Compra> compras) {
+        this.compras = compras;
     }
 
     @Override
@@ -28,11 +29,11 @@ protected ArrayList<Compra> compras;
         String cons;
         compras = new ArrayList();
         try {
-            cons = "SELECT * FROM CIGARRILLO;";
+            cons = "SELECT * FROM COMPRAS;";
             ResultSet rs = statement.executeQuery(cons);
             while (rs.next()) {
-                Compra cigarrillo = new Compra(rs.getInt("NUM_CIGA"), rs.getString("FILT").charAt(0), rs.getString("COLORH"), rs.getInt("ALQUITRAN"), rs.getInt("NICOTINA"), rs.getString("MARCA"), rs.getString("CLASE"), rs.getString("MENTOL").charAt(0), rs.getFloat("PREVENTA"), rs.getFloat("PRECOMPRA"));
-                compras.add(cigarrillo);
+                Compra compra = new Compra(rs.getInt("IDCOMPRA"), rs.getInt("IDFISCAL"), rs.getInt("NUM_CIGA"), rs.getInt("CANT_CIGA"), rs.getDate("FECHACOMPRA"));
+                compras.add(compra);
             }
             System.out.println("LECTURA COMPLETA");
         } catch (Exception e) {
@@ -49,7 +50,7 @@ protected ArrayList<Compra> compras;
         String cadSQL;
         int r;
         try {
-            cadSQL = "INSERT INTO CIGARRILLO values (" + cw.getNumCompra() + ", '" + cw.getFiltro() + "', '" + cw.getColorHoja() + "', '" + cw.getMentol() + "', '" + cw.getMarca() + "', " + cw.getAlquitran() + ", " + cw.getNicotina() + ", " + cw.getPrecio_v() + ", " + cw.getPrecio_c() + "', '" + cw.getClase() + "');";
+            cadSQL = "INSERT INTO COMPRAS values (" + cw.getIdCompra() + ", " + cw.getNumCigarrillo() + ", " + cw.getDate() + ", " + cw.getTotalNumCigarrillo() + ", " + cw.getIdFiscal() + ");";
             r = statement.executeUpdate(cadSQL);
             System.out.println("ESCRITURA COMPLETA");
         } catch (Exception e) {
@@ -86,7 +87,7 @@ protected ArrayList<Compra> compras;
         String cadSQL;
         int r;
         try {
-            cadSQL = "DELETE FROM CIGARRILLO WHERE rownum = " + pos;
+            cadSQL = "DELETE FROM COMPRAS WHERE rownum = " + pos;
             r = statement.executeUpdate(cadSQL);
         } catch (Exception e) {
             System.err.println("ERROR_DELETE");
@@ -102,7 +103,7 @@ protected ArrayList<Compra> compras;
         String cadSQL;
         int r;
         try {
-            cadSQL = "UPDATE CIGARRILLO SET NUM_CIGA = " + aw.getNumCompra() + ", FILTRO = " + aw.getFiltro() + ", COLORHOJA = " + aw.getColorHoja() + ", MENTOL = " + aw.getMentol() + ", MARCA = " + aw.getMarca() + ", ALQUITRAN = " + aw.getAlquitran() + ", NICOTINA = " + aw.getNicotina() + ", PREVENTA = " + aw.getPrecio_v() + ", PRECOMPRA = " + aw.getPrecio_c() + ", CLASE = " + aw.getClase() + " WHERE rownum = " + pos + ";";
+            cadSQL = "UPDATE COMPRAS SET IDCOMPRA = " + aw.getIdCompra() + ", NUM_CIGA = " + aw.getNumCigarrillo() + ", FECHACOMPRA = " + aw.getDate() + ", CANT_CIGA = " + aw.getTotalNumCigarrillo() + ", IDFISCAL = " + aw.getIdFiscal() + " WHERE rownum = " + pos + ";";
             r = statement.executeUpdate(cadSQL);
             System.out.println("ACTUALIZACION COMPLETA");
         } catch (Exception e) {
@@ -110,11 +111,11 @@ protected ArrayList<Compra> compras;
         }
     }
 
-    public ArrayList<Compra> getCompraes() {
+    public ArrayList<Compra> getCompras() {
         return compras;
     }
 
-    public void setCompraes(ArrayList<Compra> almacenes) {
+    public void setCompras(ArrayList<Compra> almacenes) {
         this.compras = almacenes;
     }
 }
