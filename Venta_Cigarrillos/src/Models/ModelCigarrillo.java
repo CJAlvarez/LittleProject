@@ -29,7 +29,7 @@ public class ModelCigarrillo extends Model {
         String cons;
         cigarrillos = new ArrayList();
         try {
-            cons = "SELECT * FROM CIGARRILLO;";
+            cons = "SELECT * FROM CIGARRILLO";
             ResultSet rs = statement.executeQuery(cons);
             while (rs.next()) {
                 Cigarrillo cigarrillo = new Cigarrillo(rs.getInt("NUM_CIGA"), rs.getString("FILT").charAt(0), rs.getString("COLORH"), rs.getInt("ALQUITRAN"), rs.getInt("NICOTINA"), rs.getString("MARCA"), rs.getString("CLASE"), rs.getString("MENTOL").charAt(0), rs.getFloat("PREVENTA"), rs.getFloat("PRECOMPRA"));
@@ -37,6 +37,7 @@ public class ModelCigarrillo extends Model {
             }
             System.out.println("LECTURA COMPLETA");
         } catch (Exception e) {
+            e.printStackTrace();
             System.err.println("ERROR_READ");
         }
         super.disconnect();
@@ -50,7 +51,7 @@ public class ModelCigarrillo extends Model {
         String cadSQL;
         int r;
         try {
-            cadSQL = "INSERT INTO CIGARRILLO values (" + cw.getNumCigarrillo() + ", '" + cw.getFiltro() + "', '" + cw.getColorHoja() + "', '" + cw.getMentol() + "', '" + cw.getMarca() + "', " + cw.getAlquitran() + ", " + cw.getNicotina() + ", " + cw.getPrecio_v() + ", " + cw.getPrecio_c() + "', '" + cw.getClase() + "');";
+            cadSQL = "INSERT INTO CIGARRILLO values (" + cw.getNumCigarrillo() + ", '" + cw.getFiltro() + "', '" + cw.getColorHoja() + "', '" + cw.getMentol() + "', '" + cw.getMarca() + "', " + cw.getAlquitran() + ", " + cw.getNicotina() + ", " + cw.getPrecio_v() + ", " + cw.getPrecio_c() + "', '" + cw.getClase() + "')";
             r = statement.executeUpdate(cadSQL);
             System.out.println("ESCRITURA COMPLETA");
         } catch (Exception e) {
@@ -103,7 +104,7 @@ public class ModelCigarrillo extends Model {
         String cadSQL;
         int r;
         try {
-            cadSQL = "UPDATE CIGARRILLO SET NUM_CIGA = " + aw.getNumCigarrillo() + ", FILTRO = '" + aw.getFiltro() + "', COLORHOJA = '" + aw.getColorHoja() + "', MENTOL = '" + aw.getMentol() + "', MARCA = '" + aw.getMarca() + "', ALQUITRAN = " + aw.getAlquitran() + ", NICOTINA = " + aw.getNicotina() + ", PREVENTA = " + aw.getPrecio_v() + ", PRECOMPRA = " + aw.getPrecio_c() + ", CLASE = '" + aw.getClase() + "' WHERE rownum = " + pos + ";";
+            cadSQL = "UPDATE CIGARRILLO SET NUM_CIGA = " + aw.getNumCigarrillo() + ", FILTRO = '" + aw.getFiltro() + "', COLORHOJA = '" + aw.getColorHoja() + "', MENTOL = '" + aw.getMentol() + "', MARCA = '" + aw.getMarca() + "', ALQUITRAN = " + aw.getAlquitran() + ", NICOTINA = " + aw.getNicotina() + ", PREVENTA = " + aw.getPrecio_v() + ", PRECOMPRA = " + aw.getPrecio_c() + ", CLASE = '" + aw.getClase() + "' WHERE rownum = " + pos;
             r = statement.executeUpdate(cadSQL);
             System.out.println("ACTUALIZACION COMPLETA");
         } catch (Exception e) {

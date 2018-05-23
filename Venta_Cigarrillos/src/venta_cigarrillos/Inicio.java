@@ -3316,42 +3316,49 @@ public class Inicio extends javax.swing.JFrame {
 
     private void refreshCurrentModels() {
         try {
+            System.out.println("ALMACEN_READ");
             mAl.read();
             almacen = mAl.getAlmacenes();
         } catch (Exception e) {
             System.out.println("ERROR_REFRESHCURRENTMODELS: ALMACEN_READ");
         }
         try {
+            System.out.println("CIGARRILLO_READ");
             mCig.read();
             cigarrillo = mCig.getCigarrillos();
         } catch (Exception e) {
             System.out.println("ERROR_REFRESHCURRENTMODELS: CIGARRILLO_READ");
         }
         try {
+            System.out.println("COMPRAS_READ");
             mComp.read();
             compra = mComp.getCompras();
         } catch (Exception e) {
             System.out.println("ERROR_REFRESHCURRENTMODELS: COMPRAS_READ");
         }
         try {
+            System.out.println("ESTANCOS_READ");
             mEst.read();
             estanco = mEst.getEstancos();
         } catch (Exception e) {
             System.out.println("ERROR_REFRESHCURRENTMODELS: ESTANCO_READ");
         }
         try {
+            System.out.println("FABRICANTE_READ");
             mFab.read();
             fabricante = mFab.getFabricantes();
         } catch (Exception e) {
             System.out.println("ERROR_REFRESHCURRENTMODELS: FABRICANTE_READ");
         }
         try {
+            System.out.println("MANUFACTURA_READ");
             mMan.read();
             manufactura = mMan.getManufacturas();
         } catch (Exception e) {
             System.out.println("ERROR_REFRESHCURRENTMODELS: MANUFACTURA_READ");
         }
         try {
+            System.out.println("VENTAS_READ");
             mVen.read();
             venta = mVen.getVentas();
         } catch (Exception e) {

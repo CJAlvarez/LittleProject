@@ -29,7 +29,7 @@ public class ModelAlmacen extends Model {
         String cons;
         almacenes = new ArrayList();
         try {
-            cons = "SELECT * FROM ALMACEN;";
+            cons = "SELECT * FROM ALMACEN";
             ResultSet rs = statement.executeQuery(cons);
             while (rs.next()) {
                 Almacen almacen = new Almacen(rs.getInt("ID_FISCAL"), rs.getInt("NUM_CIG"), rs.getInt("CANT_CIG"));
@@ -38,6 +38,7 @@ public class ModelAlmacen extends Model {
             System.out.println("LECTURA COMPLETA");
         } catch (Exception e) {
             System.err.println("ERROR_READ");
+            e.printStackTrace();
         }
         super.disconnect();
     }
@@ -50,7 +51,7 @@ public class ModelAlmacen extends Model {
         String cadSQL;
         int r;
         try {
-            cadSQL = "INSERT INTO ALMACEN values (" + aw.getIdFiscal() + ", " + aw.getNumCigarrillo() + ", " + aw.getCantCigarrillo() + ");";
+            cadSQL = "INSERT INTO ALMACEN values (" + aw.getIdFiscal() + ", " + aw.getNumCigarrillo() + ", " + aw.getCantCigarrillo() + ")";
             r = statement.executeUpdate(cadSQL);
             System.out.println("ESCRITURA COMPLETA");
         } catch (Exception e) {
@@ -86,7 +87,7 @@ public class ModelAlmacen extends Model {
         String cadSQL;
         int r;
         try {
-            cadSQL = "DELETE FROM ALMACEN WHERE rownum = " + pos + ";";
+            cadSQL = "DELETE FROM ALMACEN WHERE rownum = " + pos;
             r = statement.executeUpdate(cadSQL);
         } catch (Exception e) {
             System.err.println("ERROR_DELETE");
@@ -102,7 +103,7 @@ public class ModelAlmacen extends Model {
         String cadSQL;
         int r;
         try {
-            cadSQL = "UPDATE ALMACEN SET ID_FISCAL = " + aw.getIdFiscal() + ", NUM_CIG = " + aw.getNumCigarrillo() + ", CANT_CIG = " + aw.getCantCigarrillo() + " WHERE rownum = " + pos + ";";
+            cadSQL = "UPDATE ALMACEN SET ID_FISCAL = " + aw.getIdFiscal() + ", NUM_CIG = " + aw.getNumCigarrillo() + ", CANT_CIG = " + aw.getCantCigarrillo() + " WHERE rownum = " + pos;
             r = statement.executeUpdate(cadSQL);
             System.out.println("ACTUALIZACION COMPLETA");
         } catch (Exception e) {

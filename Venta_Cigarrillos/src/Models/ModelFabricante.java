@@ -29,7 +29,7 @@ public class ModelFabricante extends Model {
         String cons;
         fabricantes = new ArrayList();
         try {
-            cons = "SELECT * FROM FABRICANTE;";
+            cons = "SELECT * FROM FABRICANTE";
             ResultSet rs = statement.executeQuery(cons);
             while (rs.next()) {
                 Fabricante fabricante = new Fabricante(rs.getInt("IDFAB"), rs.getString("NOMBRE"), rs.getString("PAIS"));
@@ -50,7 +50,7 @@ public class ModelFabricante extends Model {
         String cadSQL;
         int r;
         try {
-            cadSQL = "INSERT INTO FABRICANTE values (" + cw.getIdFabricante() + ", '" + cw.getNombre() + "', '" + cw.getSede() + "');";
+            cadSQL = "INSERT INTO FABRICANTE values (" + cw.getIdFabricante() + ", '" + cw.getNombre() + "', '" + cw.getSede() + "')";
             r = statement.executeUpdate(cadSQL);
             System.out.println("ESCRITURA COMPLETA");
         } catch (Exception e) {
@@ -103,7 +103,7 @@ public class ModelFabricante extends Model {
         String cadSQL;
         int r;
         try {
-            cadSQL = "UPDATE FABRICANTE SET IDFAB = " + aw.getIdFabricante() + ", NOMBRE = '" + aw.getNombre() + "', PAIS = '" + aw.getSede() + "' WHERE rownum = " + pos + ";";
+            cadSQL = "UPDATE FABRICANTE SET IDFAB = " + aw.getIdFabricante() + ", NOMBRE = '" + aw.getNombre() + "', PAIS = '" + aw.getSede() + "' WHERE rownum = " + pos;
             r = statement.executeUpdate(cadSQL);
             System.out.println("ACTUALIZACION COMPLETA");
         } catch (Exception e) {
