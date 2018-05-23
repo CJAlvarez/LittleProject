@@ -25,7 +25,7 @@ public abstract class Model {
 
     }
 
-    public void connect() throws Exception {
+    public void connect() {
         try {
             Class.forName("oracle.jdbc.OracleDriver").newInstance();
             connection = DriverManager.getConnection(url, user, password);
