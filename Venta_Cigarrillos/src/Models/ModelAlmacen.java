@@ -23,7 +23,7 @@ public class ModelAlmacen extends Model {
     }
 
     @Override
-    public void read() throws SQLException {
+    public void read() throws Exception {
         super.connect();
         statement = connection.createStatement();
         String cons;
@@ -43,7 +43,7 @@ public class ModelAlmacen extends Model {
     }
 
     @Override
-    public void write(Object o) throws SQLException {
+    public void write(Object o) throws Exception {
         super.connect();
         Almacen aw = (Almacen) o;
         statement = connection.createStatement();
@@ -60,7 +60,7 @@ public class ModelAlmacen extends Model {
     }
 
     @Override
-    public void search() throws SQLException {
+    public void search() throws Exception {
         super.connect();
         statement = connection.createStatement();
         String cons;
@@ -80,7 +80,7 @@ public class ModelAlmacen extends Model {
     }
 
     @Override
-    public void delete(int pos) throws SQLException {
+    public void delete(int pos) throws Exception {
         super.connect();
         statement = connection.createStatement();
         String cadSQL;
@@ -95,7 +95,7 @@ public class ModelAlmacen extends Model {
     }
 
     @Override
-    public void update(Object o, int pos) throws SQLException {
+    public void update(Object o, int pos) throws Exception {
         super.connect();
         Almacen aw = (Almacen) o;
         statement = connection.createStatement();
