@@ -494,7 +494,11 @@
                                   </Group>
                               </Group>
                           </Group>
-                          <EmptySpace min="0" pref="412" max="32767" attributes="0"/>
+                          <EmptySpace min="-2" pref="91" max="-2" attributes="0"/>
+                          <Component id="jLabel63" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="jt_clase" min="-2" pref="98" max="-2" attributes="0"/>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
                           <EmptySpace pref="779" max="32767" attributes="0"/>
@@ -517,6 +521,8 @@
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel13" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="js_numCigarrillo1" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel63" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jt_clase" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
@@ -724,6 +730,13 @@
                 <Component class="javax.swing.JTextField" name="jt_preciov">
                 </Component>
                 <Component class="javax.swing.JTextField" name="jt_precioc">
+                </Component>
+                <Component class="javax.swing.JLabel" name="jLabel63">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Clase"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JTextField" name="jt_clase">
                 </Component>
               </SubComponents>
             </Container>

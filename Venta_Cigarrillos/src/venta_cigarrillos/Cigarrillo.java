@@ -1,24 +1,26 @@
 package venta_cigarrillos;
 
 public class Cigarrillo {
-    
+
     private int numCigarrillo;
     private char filtro;
     private String colorHoja;
     private int alquitran;
     private int nicotina;
     private String marca;
+    private String clase;
     private char mentol;
     private float precio_v;
     private float precio_c;
 
-    public Cigarrillo(int numCigarrillo, char filtro, String colorHoja, int alquitran, int nicotina, String marca, char mentol, float precio_v, float precio_c) {
+    public Cigarrillo(int numCigarrillo, char filtro, String colorHoja, int alquitran, int nicotina, String marca, String clase, char mentol, float precio_v, float precio_c) {
         this.numCigarrillo = numCigarrillo;
         this.filtro = filtro;
         this.colorHoja = colorHoja;
         this.alquitran = alquitran;
         this.nicotina = nicotina;
         this.marca = marca;
+        this.clase = clase;
         this.mentol = mentol;
         this.precio_v = precio_v;
         this.precio_c = precio_c;
@@ -39,8 +41,6 @@ public class Cigarrillo {
     public void setPrecio_c(float precio_c) {
         this.precio_c = precio_c;
     }
-
-
 
     public int getNumCigarrillo() {
         return numCigarrillo;
@@ -98,5 +98,12 @@ public class Cigarrillo {
         this.mentol = mentol;
     }
 
-    
+    public String getClase() {
+        return clase;
+    }
+
+    public void setClase(String clase) {
+        this.clase = clase;
+    }
+
 }

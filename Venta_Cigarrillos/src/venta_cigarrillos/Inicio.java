@@ -80,6 +80,8 @@ public class Inicio extends javax.swing.JFrame {
         jLabel62 = new javax.swing.JLabel();
         jt_preciov = new javax.swing.JTextField();
         jt_precioc = new javax.swing.JTextField();
+        jLabel63 = new javax.swing.JLabel();
+        jt_clase = new javax.swing.JTextField();
         jPanel5 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         jt_cigarrillo = new javax.swing.JTable();
@@ -513,6 +515,8 @@ public class Inicio extends javax.swing.JFrame {
 
         jLabel62.setText("Precio de Compra");
 
+        jLabel63.setText("Clase");
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -554,7 +558,11 @@ public class Inicio extends javax.swing.JFrame {
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jt_preciov)
                             .addComponent(jt_precioc))))
-                .addGap(0, 412, Short.MAX_VALUE))
+                .addGap(91, 91, 91)
+                .addComponent(jLabel63)
+                .addGap(18, 18, 18)
+                .addComponent(jt_clase, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap(779, Short.MAX_VALUE)
                 .addComponent(jButton3)
@@ -572,7 +580,9 @@ public class Inicio extends javax.swing.JFrame {
                 .addGap(49, 49, 49)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel13)
-                    .addComponent(js_numCigarrillo1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(js_numCigarrillo1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel63)
+                    .addComponent(jt_clase, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel14)
@@ -2224,7 +2234,7 @@ public class Inicio extends javax.swing.JFrame {
                 alquitran = (Integer) js_alquitran.getValue();
                 precio_v = Float.parseFloat(jt_preciov.getText());
                 precio_c = Float.parseFloat(jt_precioc.getText());
-                c = new Cigarrillo(numCigarrillo, filtro, colorHoja, alquitran, nicotina, marca, mentol, precio_v, precio_c);
+                c = new Cigarrillo(numCigarrillo, filtro, colorHoja, alquitran, nicotina, marca, "", mentol, precio_v, precio_c);
                 cigarrillo.add(c);
                 JOptionPane.showMessageDialog(jf_cigarrillos, "Cigarrillo agregado!");
             } catch (NumberFormatException e) {
@@ -3117,6 +3127,7 @@ public class Inicio extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel60;
     private javax.swing.JLabel jLabel61;
     private javax.swing.JLabel jLabel62;
+    private javax.swing.JLabel jLabel63;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
@@ -3234,6 +3245,7 @@ public class Inicio extends javax.swing.JFrame {
     private javax.swing.JSpinner js_yearv;
     private javax.swing.JTable jt_almacen;
     private javax.swing.JTable jt_cigarrillo;
+    private javax.swing.JTextField jt_clase;
     private javax.swing.JTable jt_compras;
     private javax.swing.JTable jt_distribuidor;
     private javax.swing.JTable jt_estanco;
