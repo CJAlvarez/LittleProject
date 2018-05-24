@@ -1,6 +1,7 @@
 package Models;
 
 import java.sql.*;
+
 /**
  *
  * @author CJ
@@ -31,6 +32,7 @@ public abstract class Model {
             System.out.println("CONEXION ESTABLECIDA");
         } catch (Exception e) {
             System.err.println("CONEXION NO ESTABLECIDA");
+            //throw new Exception("CONEXION NO ESTABLECIDA");
         }
     }
 
@@ -43,13 +45,13 @@ public abstract class Model {
         }
     }
 
-    public abstract void read() throws SQLException;
+    public abstract void read() throws Exception;
 
-    public abstract void write(Object o) throws SQLException;
+    public abstract void write(Object o) throws Exception;
 
-    public abstract void search() throws SQLException;
+    public abstract void search() throws Exception;
 
-    public abstract void delete(int pos) throws SQLException;
+    public abstract void delete(int pos) throws Exception;
 
-    public abstract void update(Object o, int pos) throws SQLException;
+    public abstract void update(Object o, int pos) throws Exception;
 }

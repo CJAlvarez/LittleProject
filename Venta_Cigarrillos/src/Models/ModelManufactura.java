@@ -3,22 +3,22 @@ package Models;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
-import venta_cigarrillos.Fabricante;
+import venta_cigarrillos.Manufactura;
 
 /**
  *
  * @author CJ
  */
-public class ModelFabricante extends Model {
+public class ModelManufactura extends Model {
 
-    protected ArrayList<Fabricante> fabricantes;
+    protected ArrayList<Manufactura> maufacturas;
 
-    public ModelFabricante() {
-        this.fabricantes = new ArrayList();
+    public ModelManufactura() {
+        this.maufacturas = new ArrayList();
     }
 
-    public ModelFabricante(ArrayList<Fabricante> fabricantes) {
-        this.fabricantes = fabricantes;
+    public ModelManufactura(ArrayList<Manufactura> manufacturas) {
+        this.maufacturas = manufacturas;
     }
 
     @Override
@@ -26,13 +26,13 @@ public class ModelFabricante extends Model {
         super.connect();
         statement = connection.createStatement();
         String cons;
-        fabricantes = new ArrayList();
+        maufacturas = new ArrayList();
         try {
-            cons = "SELECT * FROM FABRICANTE;";
+            cons = "SELECT * FROM MANUFACTURA;";
             ResultSet rs = statement.executeQuery(cons);
             while (rs.next()) {
-                Fabricante fabricante = new Fabricante(rs.getInt("IDFAB"), rs.getString("NOMBRE"), rs.getString("PAIS"));
-                fabricantes.add(fabricante);
+                Manufactura manufactura = new Manufactura(rs.getInt("IDFABRICANTE"), rs.getString("MARCA"), Integer.parseInt(rs.getString("CARTON")), Integer.parseInt(rs.getString("EMBALAJE")));
+                maufacturas.add(manufactura);
             }
             System.out.println("LECTURA COMPLETA");
         } catch (Exception e) {
@@ -44,12 +44,12 @@ public class ModelFabricante extends Model {
     @Override
     public void write(Object o) throws Exception {
         super.connect();
-        Fabricante cw = (Fabricante) o;
+        Manufactura cw = (Manufactura) o;
         statement = connection.createStatement();
         String cadSQL;
         int r;
         try {
-            cadSQL = "INSERT INTO FABRICANTE values (" + cw.getIdFabricante() + ", '" + cw.getNombre() + "', '" + cw.getSede() + "');";
+            cadSQL = "INSERT INTO MANUFACTURA values (" + cw.getIdFabricante() + ", '" + cw.getMarca() + "', '" + cw.getCarton() + "', '" + cw.getEmbalaje() + "');";
             r = statement.executeUpdate(cadSQL);
             System.out.println("ESCRITURA COMPLETA");
         } catch (Exception e) {
@@ -63,9 +63,9 @@ public class ModelFabricante extends Model {
         super.connect();
         statement = connection.createStatement();
         String cons;
-        fabricantes = new ArrayList();
+        maufacturas = new ArrayList();
         try {
-            cons = "SELECT * FROM FABRICANTE WHERE ";
+            cons = "SELECT * FROM MANUFACTURA WHERE ";
             ResultSet rs = statement.executeQuery(cons);
             while (rs.next()) {
                 String cons2 = "SELECT * FROM EXPEN_ALMA WHERE NUM_EXP = '" + rs.getInt("NUM_EXP") + "'";
@@ -86,7 +86,7 @@ public class ModelFabricante extends Model {
         String cadSQL;
         int r;
         try {
-            cadSQL = "DELETE FROM FABRICANTE WHERE rownum = " + pos;
+            cadSQL = "DELETE FROM MANUFACTURA WHERE rownum = " + pos;
             r = statement.executeUpdate(cadSQL);
         } catch (Exception e) {
             System.err.println("ERROR_DELETE");
@@ -97,12 +97,12 @@ public class ModelFabricante extends Model {
     @Override
     public void update(Object o, int pos) throws Exception {
         super.connect();
-        Fabricante aw = (Fabricante) o;
+        Manufactura aw = (Manufactura) o;
         statement = connection.createStatement();
         String cadSQL;
         int r;
         try {
-            cadSQL = "UPDATE FABRICANTE SET IDFAB = " + aw.getIdFabricante() + ", NOMBRE = '" + aw.getNombre() + "', PAIS = '" + aw.getSede() + "' WHERE rownum = " + pos + ";";
+            cadSQL = "UPDATE MANUFACTURA SET IDFABRICANTE = " + aw.getIdFabricante() + ", MARCA = '" + aw.getMarca() + "', CARTON = '" + aw.getCarton() + "', EMBALAJE = '" + aw.getEmbalaje() + "' WHERE rownum = " + pos + ";";
             r = statement.executeUpdate(cadSQL);
             System.out.println("ACTUALIZACION COMPLETA");
         } catch (Exception e) {
@@ -110,11 +110,11 @@ public class ModelFabricante extends Model {
         }
     }
 
-    public ArrayList<Fabricante> getFabricantes() {
-        return fabricantes;
+    public ArrayList<Manufactura> getManufacturas() {
+        return maufacturas;
     }
 
-    public void setFabricantes(ArrayList<Fabricante> Fabricantes) {
-        this.fabricantes = Fabricantes;
+    public void setManufacturas(ArrayList<Manufactura> manufacturas) {
+        this.maufacturas = manufacturas;
     }
 }

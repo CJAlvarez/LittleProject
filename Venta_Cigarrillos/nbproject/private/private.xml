@@ -4,22 +4,25 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
 <<<<<<< HEAD
+<<<<<<< HEAD
             <file>file:/C:/Users/Suyapa/Documents/LittleProject/Venta_Cigarrillos/src/venta_cigarrillos/Inicio.java</file>
             <file>file:/C:/Users/Suyapa/Documents/LittleProject/Venta_Cigarrillos/src/venta_cigarrillos/Cigarrillo.java</file>
 =======
             <file>file:/C:/Users/crist/Documents/GitHub/LittleProject/Venta_Cigarrillos/src/Models/ModelEstanco.java</file>
             <file>file:/C:/Users/crist/Documents/GitHub/LittleProject/Venta_Cigarrillos/src/Models/ModelFabricante.java</file>
+=======
+>>>>>>> 5409e17a190f589e467e155e24c549aeb5fcdff7
             <file>file:/C:/Users/crist/Documents/GitHub/LittleProject/Venta_Cigarrillos/src/Models/ModelAlmacen.java</file>
-            <file>file:/C:/Users/crist/Documents/GitHub/LittleProject/Venta_Cigarrillos/src/Models/ModelDistribuidor.java</file>
-            <file>file:/C:/Users/crist/Documents/GitHub/LittleProject/Venta_Cigarrillos/src/Models/ModelPedido.java</file>
-            <file>file:/C:/Users/crist/Documents/GitHub/LittleProject/Venta_Cigarrillos/src/Models/ModelCigarrillo.java</file>
-            <file>file:/C:/Users/crist/Documents/GitHub/LittleProject/Venta_Cigarrillos/src/Models/ModelMarca.java</file>
+            <file>file:/C:/Users/crist/Documents/GitHub/LittleProject/Venta_Cigarrillos/src/venta_cigarrillos/Inicio.java</file>
             <file>file:/C:/Users/crist/Documents/GitHub/LittleProject/Venta_Cigarrillos/src/Models/Model.java</file>
+<<<<<<< HEAD
             <file>file:/C:/Users/crist/Documents/GitHub/LittleProject/Venta_Cigarrillos/src/Models/ModelCompra.java</file>
             <file>file:/C:/Users/crist/Documents/GitHub/LittleProject/Venta_Cigarrillos/src/venta_cigarrillos/Cigarrillo.java</file>
             <file>file:/C:/Users/crist/Documents/GitHub/LittleProject/Venta_Cigarrillos/src/Models/ModelVenta.java</file>
             <file>file:/C:/Users/crist/Documents/GitHub/LittleProject/Venta_Cigarrillos/src/venta_cigarrillos/Compra.java</file>
 >>>>>>> 66e30da220117726692b990fd816997b8245d4d0
+=======
+>>>>>>> 5409e17a190f589e467e155e24c549aeb5fcdff7
         </group>
     </open-files>
 </project-private>

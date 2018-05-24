@@ -1,7 +1,6 @@
 package Models;
 
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import venta_cigarrillos.Cigarrillo;
@@ -18,12 +17,12 @@ public class ModelCigarrillo extends Model {
         this.cigarrillos = new ArrayList();
     }
 
-    public ModelCigarrillo(ArrayList<Cigarrillo> almacenes) {
-        this.cigarrillos = almacenes;
+    public ModelCigarrillo(ArrayList<Cigarrillo> cigarrillos) {
+        this.cigarrillos = cigarrillos;
     }
 
     @Override
-    public void read() throws SQLException {
+    public void read() throws Exception {
         super.connect();
         statement = connection.createStatement();
         String cons;
@@ -32,7 +31,7 @@ public class ModelCigarrillo extends Model {
             cons = "SELECT * FROM CIGARRILLO;";
             ResultSet rs = statement.executeQuery(cons);
             while (rs.next()) {
-                Cigarrillo cigarrillo = new Cigarrillo(rs.getInt("NUM_CIGA"), rs.getString("FILT").charAt(0), rs.getString("COLORH"), rs.getInt("ALQUITRAN"), rs.getInt("NICOTINA"), rs.getString("MARCA"), rs.getString("CLASE"),rs.getString("MENTOL").charAt(0), rs.getFloat("PREVENTA"), rs.getFloat("PRECOMPRA"));
+                Cigarrillo cigarrillo = new Cigarrillo(rs.getInt("NUM_CIGA"), rs.getString("FILT").charAt(0), rs.getString("COLORH"), rs.getInt("ALQUITRAN"), rs.getInt("NICOTINA"), rs.getString("MARCA"), rs.getString("CLASE"), rs.getString("MENTOL").charAt(0), rs.getFloat("PREVENTA"), rs.getFloat("PRECOMPRA"));
                 cigarrillos.add(cigarrillo);
             }
             System.out.println("LECTURA COMPLETA");
@@ -43,14 +42,14 @@ public class ModelCigarrillo extends Model {
     }
 
     @Override
-    public void write(Object o) throws SQLException {
+    public void write(Object o) throws Exception {
         super.connect();
         Cigarrillo cw = (Cigarrillo) o;
         statement = connection.createStatement();
         String cadSQL;
         int r;
         try {
-            cadSQL = "INSERT INTO ALMACEN values (" + cw.getIdFiscal() + ", " + cw.getNumCigarrillo() + ", " + cw.getCantCigarrillo() + ", " + cw.getNumExpendio() + ")";
+            cadSQL = "INSERT INTO CIGARRILLO values (" + cw.getNumCigarrillo() + ", '" + cw.getFiltro() + "', '" + cw.getColorHoja() + "', '" + cw.getMentol() + "', '" + cw.getMarca() + "', " + cw.getAlquitran() + ", " + cw.getNicotina() + ", " + cw.getPrecio_v() + ", " + cw.getPrecio_c() + "', '" + cw.getClase() + "');";
             r = statement.executeUpdate(cadSQL);
             System.out.println("ESCRITURA COMPLETA");
         } catch (Exception e) {
@@ -60,20 +59,18 @@ public class ModelCigarrillo extends Model {
     }
 
     @Override
-    public void search() throws SQLException {
+    public void search() throws Exception {
         super.connect();
         statement = connection.createStatement();
         String cons;
         cigarrillos = new ArrayList();
         try {
-            cons = "SELECT * FROM ALMACEN WHERE ";
+            cons = "SELECT * FROM CIGARRILLO WHERE ";
             ResultSet rs = statement.executeQuery(cons);
             while (rs.next()) {
                 String cons2 = "SELECT * FROM EXPEN_ALMA WHERE NUM_EXP = '" + rs.getInt("NUM_EXP") + "'";
                 Statement statement2 = connection.createStatement();
                 ResultSet rs2 = statement2.executeQuery(cons2);
-                Cigarrillo almacen = new Cigarrillo(rs.getInt("ID_FISCAL"), rs.getInt("NUM_CIG"), rs.getInt("CANT_CIG"), rs.getInt("NUM_EXP"), rs2.getString("LOCALIDAD"), rs2.getString("NOMBRE"));
-                cigarrillos.add(almacen);
             }
             System.out.println("BUSQUEDA COMPLETA");
         } catch (Exception e) {
@@ -83,16 +80,13 @@ public class ModelCigarrillo extends Model {
     }
 
     @Override
-    public void delete(int pos) throws SQLException {
+    public void delete(int pos) throws Exception {
         super.connect();
         statement = connection.createStatement();
         String cadSQL;
         int r;
         try {
-            cadSQL = "DELETE FROM ALMACEN WHERE rownum = " + pos;
-            r = statement.executeUpdate(cadSQL);
-            statement = connection.createStatement();
-            cadSQL = "DELETE FROM EXPEN_ALMA WHERE rownum = " + pos;
+            cadSQL = "DELETE FROM CIGARRILLO WHERE rownum = " + pos;
             r = statement.executeUpdate(cadSQL);
         } catch (Exception e) {
             System.err.println("ERROR_DELETE");
@@ -101,17 +95,14 @@ public class ModelCigarrillo extends Model {
     }
 
     @Override
-    public void update(Object o, int pos) throws SQLException {
+    public void update(Object o, int pos) throws Exception {
         super.connect();
         Cigarrillo aw = (Cigarrillo) o;
         statement = connection.createStatement();
         String cadSQL;
         int r;
         try {
-            cadSQL = "UPDATE ALMACEN SET ID_FISCAL = " + aw.getIdFiscal() + ", NUM_CIG = " + aw.getNumCigarrillo() + ", CANT_CIG = " + aw.getCantCigarrillo() + ", NUM_EXP = " + aw.getNumExpendio() + " WHERE rownum = " + pos;
-            r = statement.executeUpdate(cadSQL);
-            statement = connection.createStatement();
-            cadSQL = "UPDATE EXPEN_ALMA SET NUM_EXP = " + aw.getNumExpendio() + ", LOCALIDAD = '" + aw.getLocalidad() + "', NOMBRE = '" + aw.getNombre() + "' WHERE rownum = " + pos;
+            cadSQL = "UPDATE CIGARRILLO SET NUM_CIGA = " + aw.getNumCigarrillo() + ", FILTRO = '" + aw.getFiltro() + "', COLORHOJA = '" + aw.getColorHoja() + "', MENTOL = '" + aw.getMentol() + "', MARCA = '" + aw.getMarca() + "', ALQUITRAN = " + aw.getAlquitran() + ", NICOTINA = " + aw.getNicotina() + ", PREVENTA = " + aw.getPrecio_v() + ", PRECOMPRA = " + aw.getPrecio_c() + ", CLASE = '" + aw.getClase() + "' WHERE rownum = " + pos + ";";
             r = statement.executeUpdate(cadSQL);
             System.out.println("ACTUALIZACION COMPLETA");
         } catch (Exception e) {
@@ -119,11 +110,11 @@ public class ModelCigarrillo extends Model {
         }
     }
 
-    public ArrayList<Cigarrillo> getCigarrilloes() {
+    public ArrayList<Cigarrillo> getCigarrillos() {
         return cigarrillos;
     }
 
-    public void setCigarrilloes(ArrayList<Cigarrillo> almacenes) {
+    public void setCigarrillos(ArrayList<Cigarrillo> almacenes) {
         this.cigarrillos = almacenes;
     }
 }

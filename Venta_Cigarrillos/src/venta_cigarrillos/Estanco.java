@@ -1,11 +1,20 @@
 package venta_cigarrillos;
 
 public class Estanco {
-    
+
     private int idFiscal;
     private int numExpendio;
     private String localidad;
     private String nombre;
+    private String provincia;
+
+    public Estanco(int idFiscal, int numExpendio, String localidad, String nombre, String provincia) {
+        this.idFiscal = idFiscal;
+        this.numExpendio = numExpendio;
+        this.localidad = localidad;
+        this.nombre = nombre;
+        this.provincia = provincia;
+    }
 
     public Estanco(int idFiscal, int numExpendio, String localidad, String nombre) {
         this.idFiscal = idFiscal;
@@ -21,7 +30,7 @@ public class Estanco {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-    
+
     public int getIdFiscal() {
         return idFiscal;
     }
@@ -44,6 +53,14 @@ public class Estanco {
 
     public void setLocalidad(String localidad) {
         this.localidad = localidad;
+    }
+
+    public String getProvincia() {
+        return provincia;
+    }
+
+    public void setProvincia(String provincia) {
+        this.provincia = provincia;
     }
 
     @Override

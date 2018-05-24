@@ -1,22 +1,21 @@
 package venta_cigarrillos;
 
+import java.sql.Date;
+
 public class Venta {
+
     private int idVenta;
     private int idFiscal;
-    private int numCigarrillo; 
+    private int numCigarrillo;
     private int totalNumCigarrillo;
-    private int diaVenta;
-    private int mesVenta;
-    private int añoVenta;
+    private Date date;
 
-    public Venta(int idVenta, int idFiscal, int totalNumCigarrillo, int numCigarrillo, int diaVenta, int mesVenta, int añoVenta) {
+    public Venta(int idVenta, int idFiscal, int totalNumCigarrillo, int numCigarrillo, Date date) {
         this.idVenta = idVenta;
         this.idFiscal = idFiscal;
-        this.totalNumCigarrillo= totalNumCigarrillo;
-        this.numCigarrillo= numCigarrillo;
-        this.diaVenta = diaVenta;
-        this.mesVenta = mesVenta;
-        this.añoVenta = añoVenta;
+        this.numCigarrillo = numCigarrillo;
+        this.totalNumCigarrillo = totalNumCigarrillo;
+        this.date = date;
     }
 
     public int getIdVenta() {
@@ -51,31 +50,12 @@ public class Venta {
         this.totalNumCigarrillo = totalNumCigarrillo;
     }
 
-   
-
-    public int getDiaVenta() {
-        return diaVenta;
+    public Date getDate() {
+        return date;
     }
 
-    public void setDiaVenta(int diaVenta) {
-        this.diaVenta = diaVenta;
+    public void setDate(Date date) {
+        this.date = date;
     }
-
-    public int getMesVenta() {
-        return mesVenta;
-    }
-
-    public void setMesVenta(int mesVenta) {
-        this.mesVenta = mesVenta;
-    }
-
-    public int getAñoVenta() {
-        return añoVenta;
-    }
-
-    public void setAñoVenta(int añoVenta) {
-        this.añoVenta = añoVenta;
-    }
-
 
 }
