@@ -32,7 +32,7 @@ public class ModelCigarrillo extends Model {
             cons = "SELECT * FROM CIGARRILLO";
             ResultSet rs = statement.executeQuery(cons);
             while (rs.next()) {
-                Cigarrillo cigarrillo = new Cigarrillo(rs.getInt("NUM_CIGA"), rs.getString("FILT").charAt(0), rs.getString("COLORH"), rs.getInt("ALQUITRAN"), rs.getInt("NICOTINA"), rs.getString("MARCA"), rs.getString("CLASE"), rs.getString("MENTOL").charAt(0), rs.getFloat("PREVENTA"), rs.getFloat("PRECOMPRA"));
+                Cigarrillo cigarrillo = new Cigarrillo(rs.getInt("NUM_CIGA"), rs.getString("FILTRO").charAt(0), rs.getString("COLORHOJA"), rs.getInt("ALQUITRAN"), rs.getInt("NICOTINA"), rs.getString("MARCA"), rs.getString("CLASE"), rs.getString("MENTOL").charAt(0), rs.getFloat("PREVENTA"), rs.getFloat("PRECOMPRA"));
                 cigarrillos.add(cigarrillo);
             }
             System.out.println("LECTURA COMPLETA");
