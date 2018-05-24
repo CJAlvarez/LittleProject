@@ -25,11 +25,7 @@ public abstract class Model {
 
     }
 
-<<<<<<< HEAD
-    public void connect()  {
-=======
     public void connect() {
->>>>>>> 5409e17a190f589e467e155e24c549aeb5fcdff7
         try {
             Class.forName("oracle.jdbc.OracleDriver").newInstance();
             connection = DriverManager.getConnection(url, user, password);
