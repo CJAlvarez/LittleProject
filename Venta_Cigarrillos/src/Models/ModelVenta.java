@@ -1,7 +1,6 @@
 package Models;
 
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import venta_cigarrillos.Venta;
@@ -23,7 +22,7 @@ public class ModelVenta extends Model {
     }
 
     @Override
-    public void read() throws SQLException {
+    public void read() throws Exception {
         super.connect();
         statement = connection.createStatement();
         String cons;
@@ -43,7 +42,7 @@ public class ModelVenta extends Model {
     }
 
     @Override
-    public void write(Object o) throws SQLException {
+    public void write(Object o) throws Exception {
         super.connect();
         Venta cw = (Venta) o;
         statement = connection.createStatement();
@@ -60,7 +59,7 @@ public class ModelVenta extends Model {
     }
 
     @Override
-    public void search() throws SQLException {
+    public void search() throws Exception {
         super.connect();
         statement = connection.createStatement();
         String cons;
@@ -81,7 +80,7 @@ public class ModelVenta extends Model {
     }
 
     @Override
-    public void delete(int pos) throws SQLException {
+    public void delete(int pos) throws Exception {
         super.connect();
         statement = connection.createStatement();
         String cadSQL;
@@ -96,7 +95,7 @@ public class ModelVenta extends Model {
     }
 
     @Override
-    public void update(Object o, int pos) throws SQLException {
+    public void update(Object o, int pos) throws Exception {
         super.connect();
         Venta aw = (Venta) o;
         statement = connection.createStatement();

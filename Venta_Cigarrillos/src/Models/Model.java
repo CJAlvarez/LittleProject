@@ -25,7 +25,11 @@ public abstract class Model {
 
     }
 
+<<<<<<< HEAD
     public void connect()  {
+=======
+    public void connect() {
+>>>>>>> 5409e17a190f589e467e155e24c549aeb5fcdff7
         try {
             Class.forName("oracle.jdbc.OracleDriver").newInstance();
             connection = DriverManager.getConnection(url, user, password);
@@ -46,13 +50,13 @@ public abstract class Model {
         }
     }
 
-    public abstract void read() throws SQLException;
+    public abstract void read() throws Exception;
 
-    public abstract void write(Object o) throws SQLException;
+    public abstract void write(Object o) throws Exception;
 
-    public abstract void search() throws SQLException;
+    public abstract void search() throws Exception;
 
-    public abstract void delete(int pos) throws SQLException;
+    public abstract void delete(int pos) throws Exception;
 
-    public abstract void update(Object o, int pos) throws SQLException;
+    public abstract void update(Object o, int pos) throws Exception;
 }
