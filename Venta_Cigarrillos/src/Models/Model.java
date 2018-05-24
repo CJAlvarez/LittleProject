@@ -19,7 +19,7 @@ public abstract class Model {
     public Model() {
         user = "C##CIGADMIN";
         password = "1234";
-        url = "jdbc:oracle:thin:@localhost:1521:xe";
+        url = "jdbc:oracle:thin:@localhost:1521/demoorcl";
         connection = null;
         statement = null;
 
@@ -32,6 +32,7 @@ public abstract class Model {
             System.out.println("CONEXION ESTABLECIDA");
         } catch (Exception e) {
             System.err.println("CONEXION NO ESTABLECIDA");
+            e.printStackTrace();
             //throw new Exception("CONEXION NO ESTABLECIDA");
         }
     }

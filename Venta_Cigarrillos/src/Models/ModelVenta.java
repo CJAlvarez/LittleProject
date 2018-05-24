@@ -28,7 +28,7 @@ public class ModelVenta extends Model {
         String cons;
         ventas = new ArrayList();
         try {
-            cons = "SELECT * FROM VENTAS;";
+            cons = "SELECT * FROM VENTAS";
             ResultSet rs = statement.executeQuery(cons);
             while (rs.next()) {
                 Venta venta = new Venta(rs.getInt("ID_VENTA"), rs.getInt("ID_FISCAL1"), rs.getInt("TOTAL_CIG"), rs.getInt("NUM_CIG"), rs.getDate("FECHAVENTA"));
@@ -49,7 +49,7 @@ public class ModelVenta extends Model {
         String cadSQL;
         int r;
         try {
-            cadSQL = "INSERT INTO VENTAS values (" + cw.getIdVenta() + ", " + cw.getIdFiscal() + ", " + cw.getDate() + ", " + cw.getNumCigarrillo() + ", " + cw.getTotalNumCigarrillo() + ");";
+            cadSQL = "INSERT INTO VENTAS values (" + cw.getIdVenta() + ", " + cw.getIdFiscal() + ", " + cw.getDate() + ", " + cw.getNumCigarrillo() + ", " + cw.getTotalNumCigarrillo() + ")";
             r = statement.executeUpdate(cadSQL);
             System.out.println("ESCRITURA COMPLETA");
         } catch (Exception e) {
@@ -102,7 +102,7 @@ public class ModelVenta extends Model {
         String cadSQL;
         int r;
         try {
-            cadSQL = "UPDATE VENTAS SET ID_VENTA = " + aw.getIdVenta() + ", ID_FISCAL1 = " + aw.getIdFiscal() + ", FECHAVENTA = " + aw.getDate() + ", NUM_CIG = " + aw.getNumCigarrillo() + ", TOTAL_CIG = " + aw.getTotalNumCigarrillo() + " WHERE rownum = " + pos + ";";
+            cadSQL = "UPDATE VENTAS SET ID_VENTA = " + aw.getIdVenta() + ", ID_FISCAL1 = " + aw.getIdFiscal() + ", FECHAVENTA = " + aw.getDate() + ", NUM_CIG = " + aw.getNumCigarrillo() + ", TOTAL_CIG = " + aw.getTotalNumCigarrillo() + " WHERE rownum = " + pos;
             r = statement.executeUpdate(cadSQL);
             System.out.println("ACTUALIZACION COMPLETA");
         } catch (Exception e) {

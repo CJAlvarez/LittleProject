@@ -28,7 +28,7 @@ public class ModelManufactura extends Model {
         String cons;
         maufacturas = new ArrayList();
         try {
-            cons = "SELECT * FROM MANUFACTURA;";
+            cons = "SELECT * FROM MANUFACTURA";
             ResultSet rs = statement.executeQuery(cons);
             while (rs.next()) {
                 Manufactura manufactura = new Manufactura(rs.getInt("IDFABRICANTE"), rs.getString("MARCA"), Integer.parseInt(rs.getString("CARTON")), Integer.parseInt(rs.getString("EMBALAJE")));
@@ -49,7 +49,7 @@ public class ModelManufactura extends Model {
         String cadSQL;
         int r;
         try {
-            cadSQL = "INSERT INTO MANUFACTURA values (" + cw.getIdFabricante() + ", '" + cw.getMarca() + "', '" + cw.getCarton() + "', '" + cw.getEmbalaje() + "');";
+            cadSQL = "INSERT INTO MANUFACTURA values (" + cw.getIdFabricante() + ", '" + cw.getMarca() + "', '" + cw.getCarton() + "', '" + cw.getEmbalaje() + "')";
             r = statement.executeUpdate(cadSQL);
             System.out.println("ESCRITURA COMPLETA");
         } catch (Exception e) {
@@ -102,7 +102,7 @@ public class ModelManufactura extends Model {
         String cadSQL;
         int r;
         try {
-            cadSQL = "UPDATE MANUFACTURA SET IDFABRICANTE = " + aw.getIdFabricante() + ", MARCA = '" + aw.getMarca() + "', CARTON = '" + aw.getCarton() + "', EMBALAJE = '" + aw.getEmbalaje() + "' WHERE rownum = " + pos + ";";
+            cadSQL = "UPDATE MANUFACTURA SET IDFABRICANTE = " + aw.getIdFabricante() + ", MARCA = '" + aw.getMarca() + "', CARTON = '" + aw.getCarton() + "', EMBALAJE = '" + aw.getEmbalaje() + "' WHERE rownum = " + pos;
             r = statement.executeUpdate(cadSQL);
             System.out.println("ACTUALIZACION COMPLETA");
         } catch (Exception e) {

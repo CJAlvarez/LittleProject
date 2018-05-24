@@ -28,7 +28,7 @@ public class ModelEstanco extends Model {
         String cons;
         estancos = new ArrayList();
         try {
-            cons = "SELECT * FROM ESTANCOS;";
+            cons = "SELECT * FROM ESTANCOS";
             ResultSet rs = statement.executeQuery(cons);
             while (rs.next()) {
                 Estanco estanco = new Estanco(rs.getInt("ID_FISCAL"), rs.getInt("NUM_EXPENDIO"), rs.getString("LOCALIDAD"), rs.getString("NOMBRE_ESTANCO"), rs.getString("PROVINCIA"));
@@ -49,7 +49,7 @@ public class ModelEstanco extends Model {
         String cadSQL;
         int r;
         try {
-            cadSQL = "INSERT INTO ESTANCOS values (" + cw.getIdFiscal() + ", " + cw.getNumExpendio() + ", '" + cw.getNombre() + "', '" + cw.getLocalidad() + "', '" + cw.getProvincia() + "');";
+            cadSQL = "INSERT INTO ESTANCOS values (" + cw.getIdFiscal() + ", " + cw.getNumExpendio() + ", '" + cw.getNombre() + "', '" + cw.getLocalidad() + "', '" + cw.getProvincia() + "')";
             r = statement.executeUpdate(cadSQL);
             System.out.println("ESCRITURA COMPLETA");
         } catch (Exception e) {
@@ -102,7 +102,7 @@ public class ModelEstanco extends Model {
         String cadSQL;
         int r;
         try {
-            cadSQL = "UPDATE ESTANCOS SET ID_FISCAL = " + aw.getIdFiscal() + ", NUM_EXPENDIO = " + aw.getNumExpendio() + ", NOMBRE_ESTANCO = '" + aw.getNombre() + "', LOCALIDAD = '" + aw.getLocalidad() + "', PROVINCIA = '" + aw.getProvincia() + "' WHERE rownum = " + pos + ";";
+            cadSQL = "UPDATE ESTANCOS SET ID_FISCAL = " + aw.getIdFiscal() + ", NUM_EXPENDIO = " + aw.getNumExpendio() + ", NOMBRE_ESTANCO = '" + aw.getNombre() + "', LOCALIDAD = '" + aw.getLocalidad() + "', PROVINCIA = '" + aw.getProvincia() + "' WHERE rownum = " + pos;
             r = statement.executeUpdate(cadSQL);
             System.out.println("ACTUALIZACION COMPLETA");
         } catch (Exception e) {

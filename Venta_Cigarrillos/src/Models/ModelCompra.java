@@ -28,7 +28,7 @@ public class ModelCompra extends Model {
         String cons;
         compras = new ArrayList();
         try {
-            cons = "SELECT * FROM COMPRAS;";
+            cons = "SELECT * FROM COMPRAS";
             ResultSet rs = statement.executeQuery(cons);
             while (rs.next()) {
                 Compra compra = new Compra(rs.getInt("IDCOMPRA"), rs.getInt("IDFISCAL"), rs.getInt("NUM_CIGA"), rs.getInt("CANT_CIGA"), rs.getDate("FECHACOMPRA"));
@@ -49,7 +49,7 @@ public class ModelCompra extends Model {
         String cadSQL;
         int r;
         try {
-            cadSQL = "INSERT INTO COMPRAS values (" + cw.getIdCompra() + ", " + cw.getNumCigarrillo() + ", " + cw.getDate() + ", " + cw.getTotalNumCigarrillo() + ", " + cw.getIdFiscal() + ");";
+            cadSQL = "INSERT INTO COMPRAS values (" + cw.getIdCompra() + ", " + cw.getNumCigarrillo() + ", " + cw.getDate() + ", " + cw.getTotalNumCigarrillo() + ", " + cw.getIdFiscal() + ")";
             r = statement.executeUpdate(cadSQL);
             System.out.println("ESCRITURA COMPLETA");
         } catch (Exception e) {
@@ -102,7 +102,7 @@ public class ModelCompra extends Model {
         String cadSQL;
         int r;
         try {
-            cadSQL = "UPDATE COMPRAS SET IDCOMPRA = " + aw.getIdCompra() + ", NUM_CIGA = " + aw.getNumCigarrillo() + ", FECHACOMPRA = " + aw.getDate() + ", CANT_CIGA = " + aw.getTotalNumCigarrillo() + ", IDFISCAL = " + aw.getIdFiscal() + " WHERE rownum = " + pos + ";";
+            cadSQL = "UPDATE COMPRAS SET IDCOMPRA = " + aw.getIdCompra() + ", NUM_CIGA = " + aw.getNumCigarrillo() + ", FECHACOMPRA = " + aw.getDate() + ", CANT_CIGA = " + aw.getTotalNumCigarrillo() + ", IDFISCAL = " + aw.getIdFiscal() + " WHERE rownum = " + pos;
             r = statement.executeUpdate(cadSQL);
             System.out.println("ACTUALIZACION COMPLETA");
         } catch (Exception e) {
