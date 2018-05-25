@@ -147,7 +147,7 @@ public class ModelQuerty extends Model {
 
         } catch (Exception e) {
             System.out.println("ERROR_QUERTIES");
-            e.printStackTrace();
+            //e.printStackTrace();
         }
         super.disconnect();
     }
