@@ -6,6 +6,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 
 /**
@@ -38,7 +39,7 @@ public class ModelQuerty extends Model {
                     names = new String[]{"Marca", "Pais"};
                     edit = new boolean[]{false, false};
                     while (rs.next()) {
-                        objects.add(new String[]{rs.getString(0), rs.getString(1)});
+                        objects.add(new String[]{rs.getString(1), rs.getString(2)});
                     }
                     break;
                 }
@@ -47,7 +48,7 @@ public class ModelQuerty extends Model {
                     names = new String[]{"Suma Compras"};
                     edit = new boolean[]{false};
                     while (rs.next()) {
-                        objects.add(new String[]{rs.getInt(0) + ""});
+                        objects.add(new String[]{rs.getInt(1) + ""});
                     }
                     break;
                 }
@@ -56,7 +57,7 @@ public class ModelQuerty extends Model {
                     names = new String[]{"Suma Ventas"};
                     edit = new boolean[]{false};
                     while (rs.next()) {
-                        objects.add(new String[]{rs.getInt(0) + ""});
+                        objects.add(new String[]{rs.getInt(1) + ""});
                     }
                     break;
                 }
@@ -65,7 +66,7 @@ public class ModelQuerty extends Model {
                     names = new String[]{"Suma Ventas", "Marca"};
                     edit = new boolean[]{false, false};
                     while (rs.next()) {
-                        objects.add(new String[]{rs.getInt(0) + "", rs.getString(1)});
+                        objects.add(new String[]{rs.getInt(1) + "", rs.getString(2)});
                     }
                     break;
                 }
@@ -74,7 +75,7 @@ public class ModelQuerty extends Model {
                     names = new String[]{"Suma Ventas", "Marca"};
                     edit = new boolean[]{false, false};
                     while (rs.next()) {
-                        objects.add(new String[]{rs.getInt(0) + "", rs.getString(1)});
+                        objects.add(new String[]{rs.getInt(1) + "", rs.getString(2)});
                     }
                     break;
                 }
@@ -113,7 +114,7 @@ public class ModelQuerty extends Model {
                     names = new String[]{"IDFiscal", "Nombre"};
                     edit = new boolean[]{false, false};
                     while (rs.next()) {
-                        objects.add(new String[]{rs.getString(0), rs.getString(1)});
+                        objects.add(new String[]{rs.getString(1), rs.getString(2)});
                     }
                     break;
                 }
@@ -127,7 +128,7 @@ public class ModelQuerty extends Model {
             final boolean[] editable = edit;
 
             // DECLARACIÓN DE LA TABLA
-            TableModel model = new javax.swing.table.DefaultTableModel((Object[][]) (objects.toArray()), names) {
+            DefaultTableModel model = new javax.swing.table.DefaultTableModel(new Object[][]{}, names) {
                 boolean[] canEdit;
 
                 {
@@ -139,11 +140,14 @@ public class ModelQuerty extends Model {
                     return canEdit[columnIndex];
                 }
             };
+            for (int j = 0; j < objects.size(); j++) {
+                model.addRow(objects.get(j));
+            }
             t.setModel(model);
 
         } catch (Exception e) {
             System.out.println("ERROR_QUERTIES");
-            //e.printStackTrace();
+            e.printStackTrace();
         }
         super.disconnect();
     }

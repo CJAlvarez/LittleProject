@@ -51,7 +51,7 @@ public class Inicio extends javax.swing.JFrame {
         jf_venta.setLocationRelativeTo(null);
         jf_consulta.setLocationRelativeTo(null);
 
-        //refreshCurrentModels();
+        refreshCurrentModels();
     }
 
     @SuppressWarnings("unchecked")
