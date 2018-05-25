@@ -32,7 +32,7 @@ public abstract class Model {
             System.out.println("CONEXION ESTABLECIDA");
         } catch (Exception e) {
             System.err.println("CONEXION NO ESTABLECIDA");
-            e.printStackTrace();
+            //e.printStackTrace();
             //throw new Exception("CONEXION NO ESTABLECIDA");
         }
     }

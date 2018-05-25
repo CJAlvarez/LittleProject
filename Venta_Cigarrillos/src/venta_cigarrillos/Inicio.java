@@ -40,6 +40,7 @@ public class Inicio extends javax.swing.JFrame {
         jf_fabricantes.pack();
         jf_marca.pack();
         jf_venta.pack();
+        jf_consulta.pack();
         this.setLocationRelativeTo(null);
         jf_almacen.setLocationRelativeTo(null);
         jf_cigarrillos.setLocationRelativeTo(null);
@@ -48,8 +49,9 @@ public class Inicio extends javax.swing.JFrame {
         jf_fabricantes.setLocationRelativeTo(null);
         jf_marca.setLocationRelativeTo(null);
         jf_venta.setLocationRelativeTo(null);
+        jf_consulta.setLocationRelativeTo(null);
 
-        refreshCurrentModels();
+        //refreshCurrentModels();
     }
 
     @SuppressWarnings("unchecked")
@@ -220,6 +222,13 @@ public class Inicio extends javax.swing.JFrame {
         pop_tableVenta = new javax.swing.JPopupMenu();
         jm_eliminarv = new javax.swing.JMenuItem();
         jm_modificarv = new javax.swing.JMenuItem();
+        jf_consulta = new javax.swing.JFrame();
+        jPanel9 = new javax.swing.JPanel();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        jt_consulta = new javax.swing.JTable();
+        jLabel28 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        jc_Consulta = new javax.swing.JComboBox<>();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -230,6 +239,7 @@ public class Inicio extends javax.swing.JFrame {
         jb_fabricante = new javax.swing.JButton();
         jb_marca = new javax.swing.JButton();
         jb_venta = new javax.swing.JButton();
+        jb_venta1 = new javax.swing.JButton();
 
         jf_almacen.setSize(new java.awt.Dimension(0, 0));
 
@@ -1599,6 +1609,11 @@ public class Inicio extends javax.swing.JFrame {
         pop_tableMarca.add(jm_modificarma);
 
         jm_eliminarv.setText("Eliminar");
+        jm_eliminarv.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jm_eliminarvActionPerformed(evt);
+            }
+        });
         pop_tableVenta.add(jm_eliminarv);
 
         jm_modificarv.setText("Modificar");
@@ -1609,11 +1624,83 @@ public class Inicio extends javax.swing.JFrame {
         });
         pop_tableVenta.add(jm_modificarv);
 
+        jf_consulta.setSize(new java.awt.Dimension(0, 0));
+
+        jPanel9.setBackground(new java.awt.Color(255, 255, 255));
+
+        jt_consulta.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+
+            }
+        ));
+        jScrollPane4.setViewportView(jt_consulta);
+
+        jLabel28.setFont(new java.awt.Font("MS Reference Sans Serif", 0, 18)); // NOI18N
+        jLabel28.setText("Consultas");
+
+        jButton1.setText("Consultar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        jc_Consulta.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar...", "Consulta # 1", "Consulta # 2", "Consulta # 3", "Consulta # 4", "Consulta # 5", "Consulta # 6", "Consulta # 7", "Consulta # 8", "Consulta # 9", "Consulta # 10" }));
+
+        javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
+        jPanel9.setLayout(jPanel9Layout);
+        jPanel9Layout.setHorizontalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 621, Short.MAX_VALUE)
+            .addGroup(jPanel9Layout.createSequentialGroup()
+                .addGap(267, 267, 267)
+                .addComponent(jLabel28)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel9Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jc_Consulta, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(55, 55, 55)
+                .addComponent(jButton1)
+                .addGap(147, 147, 147))
+        );
+        jPanel9Layout.setVerticalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel9Layout.createSequentialGroup()
+                .addComponent(jLabel28)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 385, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton1)
+                    .addComponent(jc_Consulta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(16, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout jf_consultaLayout = new javax.swing.GroupLayout(jf_consulta.getContentPane());
+        jf_consulta.getContentPane().setLayout(jf_consultaLayout);
+        jf_consultaLayout.setHorizontalGroup(
+            jf_consultaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jf_consultaLayout.createSequentialGroup()
+                .addGap(0, 1, Short.MAX_VALUE)
+                .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 1, Short.MAX_VALUE))
+        );
+        jf_consultaLayout.setVerticalGroup(
+            jf_consultaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jf_consultaLayout.createSequentialGroup()
+                .addGap(0, 13, Short.MAX_VALUE)
+                .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 13, Short.MAX_VALUE))
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("INICIO-VENTA DE CIGARRILLOS");
         setBackground(new java.awt.Color(153, 0, 153));
 
-        jPanel1.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel1.setBackground(new java.awt.Color(51, 51, 51));
 
         jLabel1.setFont(new java.awt.Font("Papyrus", 0, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -1695,6 +1782,25 @@ public class Inicio extends javax.swing.JFrame {
                 jb_ventaMouseClicked(evt);
             }
         });
+        jb_venta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jb_ventaActionPerformed(evt);
+            }
+        });
+
+        jb_venta1.setBackground(new java.awt.Color(0, 102, 102));
+        jb_venta1.setForeground(new java.awt.Color(255, 255, 255));
+        jb_venta1.setText("Consulta");
+        jb_venta1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jb_venta1MouseClicked(evt);
+            }
+        });
+        jb_venta1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jb_venta1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -1727,9 +1833,11 @@ public class Inicio extends javax.swing.JFrame {
                                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jb_estanco, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(27, 27, 27)
-                        .addComponent(jb_venta, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jb_venta, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jb_venta1, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(20, 20, 20)))
-                .addContainerGap(36, Short.MAX_VALUE))
+                .addContainerGap(48, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1746,23 +1854,28 @@ public class Inicio extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jb_cigarrillos)
-                    .addComponent(jb_estanco))
+                    .addComponent(jb_estanco)
+                    .addComponent(jb_venta1))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jb_compra)
                     .addComponent(jb_fabricante))
-                .addGap(77, 77, 77))
+                .addGap(71, 71, 71))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGap(0, 436, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGap(0, 313, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -1805,6 +1918,10 @@ public class Inicio extends javax.swing.JFrame {
             num = (String) jc_numc.getSelectedItem();
             numCigarrillo = Integer.parseInt(num);
             a = new Almacen(idFiscal, numCigarrillo, cantCigarrillo);
+            try {
+                mAl.write(a);
+            } catch (Exception ex) {
+            }
             almacen.add(a);
             JOptionPane.showMessageDialog(jf_almacen, "Almacén agregado!");
 
@@ -1845,6 +1962,10 @@ public class Inicio extends javax.swing.JFrame {
 
         DefaultTableModel model = (DefaultTableModel) jt_almacen.getModel();
         if (jt_almacen.getSelectedRow() >= 0) {
+            try {
+                mAl.delete(jt_almacen.getSelectedRow());
+            } catch (Exception ex) {
+            }
             almacen.remove(jt_almacen.getSelectedRow());
             model.removeRow(jt_almacen.getSelectedRow());
 
@@ -1877,6 +1998,10 @@ public class Inicio extends javax.swing.JFrame {
             model.setValueAt(numCigarrillo, jt_almacen.getSelectedRow(), 1);
             model.setValueAt(cantCigarrillo, jt_almacen.getSelectedRow(), 2);
 
+            try {
+                mAl.update(almacen.get(jt_almacen.getSelectedRow()), jt_almacen.getSelectedRow());
+            } catch (Exception ex) {
+            }
             JOptionPane.showMessageDialog(jf_almacen, "¡Campo modificado exitosamente!");
 
         } else {
@@ -1923,6 +2048,10 @@ public class Inicio extends javax.swing.JFrame {
                 precio_v = Float.parseFloat(jt_preciov.getText());
                 precio_c = Float.parseFloat(jt_precioc.getText());
                 c = new Cigarrillo(numCigarrillo, filtro, colorHoja, alquitran, nicotina, marca, clase, mentol, precio_v, precio_c);
+                try {
+                    mCig.write(c);
+                } catch (Exception ex) {
+                }
                 cigarrillo.add(c);
                 JOptionPane.showMessageDialog(jf_cigarrillos, "Cigarrillo agregado!");
                 jc_numc.addItem(Integer.toString(numCigarrillo));
@@ -1973,6 +2102,10 @@ public class Inicio extends javax.swing.JFrame {
 
         DefaultTableModel model = (DefaultTableModel) jt_cigarrillo.getModel();
         if (jt_cigarrillo.getSelectedRow() >= 0) {
+            try {
+                mCig.delete(jt_cigarrillo.getSelectedRow());
+            } catch (Exception ex) {
+            }
             cigarrillo.remove(jt_cigarrillo.getSelectedRow());
             model.removeRow(jt_cigarrillo.getSelectedRow());
 
@@ -2043,6 +2176,10 @@ public class Inicio extends javax.swing.JFrame {
                 cigarrillo.get(jt_cigarrillo.getSelectedRow()).setMarca(marca);
                 cigarrillo.get(jt_cigarrillo.getSelectedRow()).setPrecio_v(precio_v);
                 cigarrillo.get(jt_cigarrillo.getSelectedRow()).setPrecio_c(precio_c);
+                try {
+                    mCig.update(cigarrillo.get(jt_cigarrillo.getSelectedRow()), jt_cigarrillo.getSelectedRow());
+                } catch (Exception ex) {
+                }
                 JOptionPane.showMessageDialog(jf_cigarrillos, "¡Campo modificado exitosamente, para ver tus cambios refresca la tabla!");
             } else {
                 JOptionPane.showMessageDialog(jf_cigarrillos, "¡El campo no ha sido modificado!");
@@ -2075,6 +2212,10 @@ public class Inicio extends javax.swing.JFrame {
             idCompra = (Integer) js_idcompra.getValue();
             totalNumCigarrillo = (Integer) js_totalnum.getValue();
             c = new Compra(idCompra, idFiscal, numCigarrillo, totalNumCigarrillo, date);
+            try {
+                mComp.write(c);
+            } catch (Exception ex) {
+            }
             compra.add(c);
             JOptionPane.showMessageDialog(jf_compra, "¡Compra agregada exitosamente!");
 
@@ -2115,6 +2256,10 @@ public class Inicio extends javax.swing.JFrame {
 
         DefaultTableModel model = (DefaultTableModel) jt_compras.getModel();
         if (jt_compras.getSelectedRow() >= 0) {
+            try {
+                mComp.delete(jt_compras.getSelectedRow());
+            } catch (Exception ex) {
+            }
             compra.remove(jt_compras.getSelectedRow());
             model.removeRow(jt_compras.getSelectedRow());
 
@@ -2150,7 +2295,10 @@ public class Inicio extends javax.swing.JFrame {
                 compra.get(jt_compras.getSelectedRow()).setIdFiscal(idFiscal);
                 compra.get(jt_compras.getSelectedRow()).setNumCigarrillo(numCigarrillo);
                 compra.get(jt_compras.getSelectedRow()).setTotalNumCigarrillo(totalNumCigarrillo);
-
+                try {
+                    mComp.update(compra.get(jt_compras.getSelectedRow()), jt_compras.getSelectedRow());
+                } catch (Exception ex) {
+                }
                 JOptionPane.showMessageDialog(jf_compra, "¡Campo modificado exitosamente, para ver tus cambios refresca la tabla!");
             } else {
                 JOptionPane.showMessageDialog(jf_compra, "¡El campo no ha sido modificado!");
@@ -2182,6 +2330,10 @@ public class Inicio extends javax.swing.JFrame {
             nombre = jt_nombree.getText();
             provincia = jt_provincia.getText();
             e = new Estanco(idFiscal, numExpendio, localidad, nombre, provincia);
+            try {
+                mEst.write(e);
+            } catch (Exception ex) {
+            }
             estanco.add(e);
             JOptionPane.showMessageDialog(jf_estanco, "¡Estanco agregado exitosamente!");
         } catch (NumberFormatException en) {
@@ -2218,6 +2370,10 @@ public class Inicio extends javax.swing.JFrame {
 
         DefaultTableModel model = (DefaultTableModel) jt_estanco.getModel();
         if (jt_estanco.getSelectedRow() >= 0) {
+            try {
+                mEst.delete(jt_estanco.getSelectedRow());
+            } catch (Exception ex) {
+            }
             estanco.remove(jt_estanco.getSelectedRow());
             model.removeRow(jt_estanco.getSelectedRow());
 
@@ -2254,7 +2410,10 @@ public class Inicio extends javax.swing.JFrame {
                 estanco.get(jt_estanco.getSelectedRow()).setNumExpendio(numExpendio);
                 estanco.get(jt_estanco.getSelectedRow()).setLocalidad(localidad);
                 estanco.get(jt_estanco.getSelectedRow()).setNombre(nombre);
-
+                try {
+                    mEst.update(estanco.get(jt_estanco.getSelectedRow()), jt_estanco.getSelectedRow());
+                } catch (Exception ex) {
+                }
                 JOptionPane.showMessageDialog(jf_estanco, "¡Campo modificado exitosamente, para ver tus cambios refresca la tabla!");
             } else {
                 JOptionPane.showMessageDialog(jf_estanco, "¡El campo no ha sido modificado!");
@@ -2283,6 +2442,10 @@ public class Inicio extends javax.swing.JFrame {
         sede = jt_sede.getText();
         nombre = jt_nombref.getText();
         f = new Fabricante(idFabricante, nombre, sede);
+        try {
+            mFab.write(f);
+        } catch (Exception ex) {
+        }
         fabricante.add(f);
 
         js_idfabricante.setValue(0);
@@ -2313,6 +2476,10 @@ public class Inicio extends javax.swing.JFrame {
 
         DefaultTableModel model = (DefaultTableModel) jt_fabricante.getModel();
         if (jt_fabricante.getSelectedRow() >= 0) {
+            try {
+                mFab.delete(jt_fabricante.getSelectedRow());
+            } catch (Exception ex) {
+            }
             fabricante.remove(jt_fabricante.getSelectedRow());
             model.removeRow(jt_fabricante.getSelectedRow());
 
@@ -2346,7 +2513,10 @@ public class Inicio extends javax.swing.JFrame {
                 fabricante.get(jt_fabricante.getSelectedRow()).setIdFabricante(idFabricante);
                 fabricante.get(jt_fabricante.getSelectedRow()).setSede(sede);
                 fabricante.get(jt_fabricante.getSelectedRow()).setNombre(nombre);
-
+                try {
+                    mFab.update(fabricante.get(jt_fabricante.getSelectedRow()), jt_fabricante.getSelectedRow());
+                } catch (Exception ex) {
+                }
                 JOptionPane.showMessageDialog(jf_fabricantes, "¡Campo modificado exitosamente, para ver tus cambios refresca la tabla!");
             } else {
                 JOptionPane.showMessageDialog(jf_fabricantes, "¡El campo no ha sido modificado!");
@@ -2373,6 +2543,10 @@ public class Inicio extends javax.swing.JFrame {
         nombre = jt_nombrem.getText();
         m = new Manufactura(idFabricante, nombre);
         manufactura.add(m);
+        try {
+            mMan.write(m);
+        } catch (Exception ex) {
+        }
         jc_marca.addItem(nombre);
 
         js_idfabricantem.setValue(0);
@@ -2405,6 +2579,10 @@ public class Inicio extends javax.swing.JFrame {
         // ELIMINAR MARCA
         DefaultTableModel model = (DefaultTableModel) jt_marcaa.getModel();
         if (jt_marcaa.getSelectedRow() >= 0) {
+            try {
+                mMan.delete(jt_marcaa.getSelectedRow());
+            } catch (Exception ex) {
+            }
             manufactura.remove(jt_marcaa.getSelectedRow());
             model.removeRow(jt_marcaa.getSelectedRow());
 
@@ -2436,7 +2614,10 @@ public class Inicio extends javax.swing.JFrame {
             if (a == true) {
                 manufactura.get(jt_marcaa.getSelectedRow()).setIdFabricante(idFabricante);
                 manufactura.get(jt_marcaa.getSelectedRow()).setMarca(nombre);
-
+                try {
+                    mMan.update(manufactura.get(jt_marcaa.getSelectedRow()), jt_marcaa.getSelectedRow());
+                } catch (Exception ex) {
+                }
                 JOptionPane.showMessageDialog(jf_marca, "¡Campo modificado exitosamente, para ver tus cambios refresca la tabla!");
             } else {
                 JOptionPane.showMessageDialog(jf_marca, "¡El campo no ha sido modificado!");
@@ -2462,7 +2643,7 @@ public class Inicio extends javax.swing.JFrame {
 
     private void jb_agregarventaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_agregarventaMouseClicked
         // AGREGAR VENTA
-        int idVenta, idFiscal, numCigarrillo, totalNumCigarrillo=0;
+        int idVenta, idFiscal, numCigarrillo, totalNumCigarrillo = 0;
         String num;
         java.sql.Date date = new java.sql.Date(jd_calendarv.getDate().getTime());
         num = (String) jc_numcv.getSelectedItem();
@@ -2474,6 +2655,10 @@ public class Inicio extends javax.swing.JFrame {
             idVenta = (Integer) js_idventa.getValue();
             totalNumCigarrillo = (Integer) js_totalnumv.getValue();
             v = new Venta(idVenta, idFiscal, totalNumCigarrillo, numCigarrillo, date);
+            try {
+                mVen.write(v);
+            } catch (Exception ex) {
+            }
             venta.add(v);
             JOptionPane.showMessageDialog(jf_venta, "¡Venta agregada exitosamente!");
 
@@ -2521,7 +2706,10 @@ public class Inicio extends javax.swing.JFrame {
                 venta.get(jt_venta.getSelectedRow()).setIdFiscal(idFiscal);
                 venta.get(jt_venta.getSelectedRow()).setNumCigarrillo(numCigarrillo);
                 venta.get(jt_venta.getSelectedRow()).setTotalNumCigarrillo(totalNumCigarrillo);
-
+                try {
+                    mVen.update(venta.get(jt_venta.getSelectedRow()), jt_venta.getSelectedRow());
+                } catch (Exception ex) {
+                }
                 JOptionPane.showMessageDialog(jf_venta, "¡Campo modificado exitosamente, para ver tus cambios refresca la tabla!");
             } else {
                 JOptionPane.showMessageDialog(jf_venta, "¡El campo no ha sido modificado!");
@@ -2563,6 +2751,50 @@ public class Inicio extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jb_total1MouseClicked
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        ModelQuerty mque = new ModelQuerty();
+        if (jc_Consulta.getSelectedIndex() > 0) {
+            try {
+                mque.consult(jc_Consulta.getSelectedIndex() - 1, jt_consulta);
+            } catch (Exception ex) {
+                System.out.println("ERROR_CONSULTA_INIT");
+            }
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jb_venta1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jb_venta1MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jb_venta1MouseClicked
+
+    private void jb_venta1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_venta1ActionPerformed
+        // MOSTRAR MENU CONSULTAS
+        jf_consulta.setLocationRelativeTo(this);
+        jf_consulta.setVisible(true);
+    }//GEN-LAST:event_jb_venta1ActionPerformed
+
+    private void jb_ventaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_ventaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jb_ventaActionPerformed
+
+    private void jm_eliminarvActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jm_eliminarvActionPerformed
+        // ELIMINAR VENTAS
+        DefaultTableModel model = (DefaultTableModel) jt_venta.getModel();
+        if (jt_venta.getSelectedRow() >= 0) {
+            try {
+                mVen.delete(jt_venta.getSelectedRow());
+            } catch (Exception ex) {
+            }
+            venta.remove(jt_venta.getSelectedRow());
+            model.removeRow(jt_venta.getSelectedRow());
+
+            jt_venta.updateUI();
+            JOptionPane.showMessageDialog(jf_venta, "¡Venta eliminada exitosamente!");
+
+        } else {
+            JOptionPane.showMessageDialog(jf_venta, "¡Seleccione una venta primero!");
+        }
+    }//GEN-LAST:event_jm_eliminarvActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -2574,7 +2806,7 @@ public class Inicio extends javax.swing.JFrame {
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
+                if ("Darcula".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
@@ -2607,6 +2839,7 @@ public class Inicio extends javax.swing.JFrame {
     ArrayList<Venta> venta = new ArrayList();
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -2628,6 +2861,7 @@ public class Inicio extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel34;
@@ -2678,9 +2912,11 @@ public class Inicio extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
+    private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
@@ -2708,6 +2944,8 @@ public class Inicio extends javax.swing.JFrame {
     private javax.swing.JButton jb_total;
     private javax.swing.JButton jb_total1;
     private javax.swing.JButton jb_venta;
+    private javax.swing.JButton jb_venta1;
+    private javax.swing.JComboBox<String> jc_Consulta;
     private javax.swing.JComboBox<String> jc_color;
     private javax.swing.JComboBox<String> jc_filtro;
     private javax.swing.JComboBox<String> jc_marca;
@@ -2720,6 +2958,7 @@ public class Inicio extends javax.swing.JFrame {
     private javax.swing.JFrame jf_almacen;
     private javax.swing.JFrame jf_cigarrillos;
     private javax.swing.JFrame jf_compra;
+    private javax.swing.JFrame jf_consulta;
     private javax.swing.JFrame jf_estanco;
     private javax.swing.JFrame jf_fabricantes;
     private javax.swing.JFrame jf_marca;
@@ -2754,6 +2993,7 @@ public class Inicio extends javax.swing.JFrame {
     private javax.swing.JTable jt_cigarrillo;
     private javax.swing.JTextField jt_clase;
     private javax.swing.JTable jt_compras;
+    private javax.swing.JTable jt_consulta;
     private javax.swing.JTable jt_estanco;
     private javax.swing.JTable jt_fabricante;
     private javax.swing.JTextField jt_idFiscal;

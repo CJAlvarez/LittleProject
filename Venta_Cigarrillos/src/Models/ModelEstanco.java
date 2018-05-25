@@ -81,6 +81,7 @@ public class ModelEstanco extends Model {
 
     @Override
     public void delete(int pos) throws Exception {
+        pos += 1;
         super.connect();
         statement = connection.createStatement();
         String cadSQL;
@@ -96,6 +97,7 @@ public class ModelEstanco extends Model {
 
     @Override
     public void update(Object o, int pos) throws Exception {
+        pos += 1;
         super.connect();
         Estanco aw = (Estanco) o;
         statement = connection.createStatement();
