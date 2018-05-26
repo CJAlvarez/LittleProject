@@ -129,7 +129,7 @@ public class ModelQuerty extends Model {
                         int cant = 0;
                         do {
                             try {
-                                idAlmacen = almacenes.get(Integer.parseInt(JOptionPane.showInputDialog(null, "Ingrese IdFiscal", ""))).getIdFiscal();
+                                idAlmacen = Integer.parseInt(JOptionPane.showInputDialog(null, "Ingrese IdFiscal", ""));
                                 flag = 1;
                             } catch (Exception e) {
                                 JOptionPane.showMessageDialog(null, "Dato inválido", "Error", 0);
