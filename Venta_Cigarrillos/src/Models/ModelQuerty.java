@@ -1,5 +1,7 @@
 package Models;
 
+import java.sql.CallableStatement;
+import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -8,6 +10,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
+import venta_cigarrillos.Almacen;
 
 /**
  *
@@ -119,6 +122,37 @@ public class ModelQuerty extends Model {
                     break;
                 }
                 case 9: {
+                    try {
+                        CallableStatement cst = connection.prepareCall("{call MENOS_VENDIDAS1 (?,?)}");
+                        int flag = 0;
+                        int idAlmacen = 0;
+                        int cant = 0;
+                        do {
+                            try {
+                                idAlmacen = almacenes.get(Integer.parseInt(JOptionPane.showInputDialog(null, "Ingrese IdFiscal", ""))).getIdFiscal();
+                                flag = 1;
+                            } catch (Exception e) {
+                                JOptionPane.showMessageDialog(null, "Dato inválido", "Error", 0);
+                                flag = 0;
+                            }
+                        } while (flag == 0);
+                        flag = 0;
+                        do {
+                            try {
+                                cant = Integer.parseInt(JOptionPane.showInputDialog(null, "Ingrese cantidad límite", ""));
+                                flag = 1;
+                            } catch (Exception e) {
+                                JOptionPane.showMessageDialog(null, "Dato inválido", "Error", 0);
+                                flag = 0;
+                            }
+                        } while (flag == 0);
+                        cst.setInt(1, idAlmacen);
+                        cst.setInt(2, cant);
+                        cst.execute();
+                    } catch (Exception e) {
+                        System.out.println("ERROR_PROCEDURE");
+                        e.printStackTrace();
+                    }
                     break;
                 }
                 default: {
@@ -179,5 +213,13 @@ public class ModelQuerty extends Model {
     public void setObjects(ArrayList<String[]> objects) {
         this.objects = objects;
     }
+    protected ArrayList<Almacen> almacenes;
 
+    public ArrayList<Almacen> getAlmacenes() {
+        return almacenes;
+    }
+
+    public void setAlmacenes(ArrayList<Almacen> almacenes) {
+        this.almacenes = almacenes;
+    }
 }
