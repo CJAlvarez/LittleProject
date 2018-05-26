@@ -212,14 +212,6 @@ public class ModelQuerty extends Model {
 
     public void setObjects(ArrayList<String[]> objects) {
         this.objects = objects;
-    }
-    protected ArrayList<Almacen> almacenes;
 
-    public ArrayList<Almacen> getAlmacenes() {
-        return almacenes;
-    }
-
-    public void setAlmacenes(ArrayList<Almacen> almacenes) {
-        this.almacenes = almacenes;
     }
 }
