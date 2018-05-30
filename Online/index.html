@@ -21,7 +21,7 @@
         <div id="container-almacenes">ALMACÉN
             <form>
                 <label>ID Fiscal </label><input type="text" name="idFiscal" placeholder="ID Fiscal"><br/><br/>
-                <label>Número de Cigarrillos </label>
+                <label>Número de Cigarrillo </label>
                 <SELECT NAME="selCombo" SIZE=1 onChange="javascript:alert('Opción seleccionada');"> 
                     <OPTION SELECTED>Cigarrillo 1</OPTION>
                     <OPTION>Cigarrillo 2</OPTION>
@@ -43,11 +43,11 @@
         </div>
 
         <!-- VENTAS. -->
-        <div id="container-ventas">
+        <div id="container-ventas">VENTA
             <form>
                 <label>ID Venta </label><input type="number" min="0" max="100" step="1" value="0" size="6" name="idVenta"><br/><br/>
                 <label>ID Fiscal </label><input type="number" min="0" max="100" step="1" value="0" size="6" name="idFiscal"><br/><br/>
-                <label>Número de Cigarrillos </label>
+                <label>Número de Cigarrillo </label>
                 <SELECT NAME="selCombo" SIZE=1 onChange="javascript:alert('Opción seleccionada');"> 
                     <OPTION SELECTED>Cigarrillo 1</OPTION>
                     <OPTION>Cigarrillo 2</OPTION>
@@ -55,13 +55,51 @@
                     <OPTION>Cigarrillo 4</OPTION>
                     <OPTION>Cigarrillo 5</OPTION>
                 </SELECT><br/><br/>
-                <label>Total Número de Cigarrillos </label><input type="number" min="0" max="100" step="1" value="0" size="6" name="numCigarrillos"><br/><br/>
+                <label>Total Número de Cigarrillos </label><input type="number" min="0" max="100" step="1" value="0" size="6" name="totalNumCigarrillos"><br/><br/>
             </form>
             <!-- END VENTAS. -->
         </div>
 
         <!-- CIGARRILLOS. -->
-        <div id="container-cigarrillos">
+        <div id="container-cigarrillos">CIGARRILLO
+            <form>
+                <label>Número de Cigarrillo </label><input type="number" min="0" max="100" step="1" value="0" size="6" name="numCigarrillos"><br/><br/>
+                <label>Filtro </label>
+                <SELECT NAME="selCombo" SIZE=1 onChange="javascript:alert('Opción seleccionada');"> 
+                    <OPTION SELECTED>Filtro 1</OPTION>
+                    <OPTION>Filtro 2</OPTION>
+                    <OPTION>Filtro 3</OPTION>
+                    <OPTION>Filtro 4</OPTION>
+                    <OPTION>Filtro 5</OPTION>
+                </SELECT><br/><br/>
+                <label>Color de Hoja</label>
+                <SELECT NAME="selCombo" SIZE=1 onChange="javascript:alert('Opción seleccionada');"> 
+                    <OPTION SELECTED>Color de Hoja 1</OPTION>
+                    <OPTION>Color de Hoja 2</OPTION>
+                    <OPTION>Color de Hoja 3</OPTION>
+                    <OPTION>Color de Hoja 4</OPTION>
+                    <OPTION>Color de Hoja 5</OPTION>
+                </SELECT><br/><br/>
+                <label>Mentol </label>
+                <SELECT NAME="selCombo" SIZE=1 onChange="javascript:alert('Opción seleccionada');"> 
+                    <OPTION SELECTED>Mentol 1</OPTION>
+                    <OPTION>Mentol 2</OPTION>
+                    <OPTION>Mentol 3</OPTION>
+                    <OPTION>Mentol 4</OPTION>
+                    <OPTION>Mentol 5</OPTION>
+                </SELECT><br/><br/>
+                <label>Marca </label>
+                <SELECT NAME="selCombo" SIZE=1 onChange="javascript:alert('Opción seleccionada');"> 
+                    <OPTION SELECTED>Marca 1</OPTION>
+                    <OPTION>Marca 2</OPTION>
+                    <OPTION>Marca 3</OPTION>
+                    <OPTION>Marca 4</OPTION>
+                    <OPTION>Marca 5</OPTION>
+                </SELECT><br/><br/>
+                <label>Precio de Venta </label><input type="text" name="precioVenta"><br/><br/>
+                <label>Precio de Compra </label><input type="text" name="precioCompra"><br/><br/>
+                <label>Clase </label><input type="text" name="clase"><br/><br/>
+            </form>
             <!-- END CIGARRILLOS. -->
         </div>
         <!-- CJ. -->
