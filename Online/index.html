@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Page Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <link rel="stylesheet" type="text/css" media="sc
     <script src="main.js"></script>
 </head>
 
@@ -16,19 +16,47 @@
     <!-- PRINCIPAL CONTAINER. -->
     <div id="container-principal">
 
-<!-- ILICH. -->
+        <!-- ILICH. -->
         <!-- ALMACENES. -->
-        <div id="container-almacenes">
+        <div id="container-almacenes">ALMACÉN
+            <form>
+                <label>ID Fiscal </label><input type="text" name="idFiscal" placeholder="ID Fiscal"><br/><br/>
+                <label>Número de Cigarrillos </label>
+                <SELECT NAME="selCombo" SIZE=1 onChange="javascript:alert('Opción seleccionada');"> 
+                    <OPTION SELECTED>Cigarrillo 1</OPTION>
+                    <OPTION>Cigarrillo 2</OPTION>
+                    <OPTION>Cigarrillo 3</OPTION>
+                    <OPTION>Cigarrillo 4</OPTION>
+                    <OPTION>Cigarrillo 5</OPTION>
+                </SELECT><br/><br/>
+                <label>Cantidad de Cigarrillos </label><input type="number" min="0" max="100" step="1" value="0" size="6" name="cantCigarrillos"><br/><br/>
+            </form>
             <!-- END ALMACENES. -->
         </div>
-
         <!-- MARCAS. -->
-        <div id="container-marcas">
+        <div id="container-marcas">MARCA
+            <form>
+                <label>ID Fabricante </label><input type="number" min="0" max="100" step="1" value="0" size="6" name="idFabricante"><br/><br/>
+                <label>Nombre </label><input type="text" name="nombreMarca" placeholder="Nombre"><br/><br/>
+            </form>
             <!--END MARCAS. -->
         </div>
 
         <!-- VENTAS. -->
         <div id="container-ventas">
+            <form>
+                <label>ID Venta </label><input type="number" min="0" max="100" step="1" value="0" size="6" name="idVenta"><br/><br/>
+                <label>ID Fiscal </label><input type="number" min="0" max="100" step="1" value="0" size="6" name="idFiscal"><br/><br/>
+                <label>Número de Cigarrillos </label>
+                <SELECT NAME="selCombo" SIZE=1 onChange="javascript:alert('Opción seleccionada');"> 
+                    <OPTION SELECTED>Cigarrillo 1</OPTION>
+                    <OPTION>Cigarrillo 2</OPTION>
+                    <OPTION>Cigarrillo 3</OPTION>
+                    <OPTION>Cigarrillo 4</OPTION>
+                    <OPTION>Cigarrillo 5</OPTION>
+                </SELECT><br/><br/>
+                <label>Total Número de Cigarrillos </label><input type="number" min="0" max="100" step="1" value="0" size="6" name="numCigarrillos"><br/><br/>
+            </form>
             <!-- END VENTAS. -->
         </div>
 
@@ -36,7 +64,7 @@
         <div id="container-cigarrillos">
             <!-- END CIGARRILLOS. -->
         </div>
-<!-- CJ. -->
+        <!-- CJ. -->
         <!-- ESTANCOS. -->
         <div id="container-estancos">
             <!-- END ESTANCOS. -->
