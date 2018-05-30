@@ -10,7 +10,7 @@ body {
     background-position-y: center;
 }
 
-h1, h2 {
+h1, h2, #container-secciones {
     background-color: whitesmoke;
     font-family: "Montserrat", sans-serif;
     text-align: center;
