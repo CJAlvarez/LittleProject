@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Tabaquería</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">    
+    <link rel="shortcut icon" href="smoke.png" />
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+</head>
+
+<body>
+    <noscript> © 2018 Noscript. </noscript>
+
+    <h1>Bienvenido a la Tabaquería</h1>
+
+    <!-- PRINCIPAL CONTAINER. -->
+    <div id="container-principal">
+
+        <!-- BUTTONS. -->
+        <div id="container-buttons" style="display: block">
+            <h2>Seleccione una opción</h2>
+            <button onclick='changeDisplay("Almacenes")' id="button-toAlmacenes">
+                <h3>Almacenes</h3>
+            </button>
+            <button onclick='changeDisplay("Marcas")' id="button-toMarcas">
+                <h3>Marcas</h3>
+            </button>
+            <button onclick='changeDisplay("Ventas")' id="button-toVentas">
+                <h3>Ventas</h3>
+            </button>
+            <button onclick='changeDisplay("Cigarrillos")' id="button-toCigarrillos">
+                <h3>Cigarrillos</h3>
+            </button>
+            <button onclick='changeDisplay("Estancos")' id="button-toEstancos">
+                <h3>Estancos</h3>
+            </button>
+            <button onclick='changeDisplay("Consulas")' id="button-toConsultas">
+                <h3>Consultas</h3>
+            </button>
+            <button onclick='changeDisplay("Compras")' id="button-toCompras">
+                <h3>Compras</h3>
+            </button>
+            <button onclick='changeDisplay("Fabricantes")' id="button-toFabricantes">
+                <h3>Fabricantes</h3>
+            </button>
+            <!--END BUTTONS. -->
+        </div>
+
+        <!-- SECCIONES. -->
+        <div id="container-secciones" style="display: block">
+        <!-- ILICH. -->
+        <!-- ALMACENES. -->
+        <div id="container-almacenes"style="display: none">
+                <h2>Almacenes</h2>
+            <form>
+                <label>ID Fiscal </label><input type="text" name="idFiscal" placeholder="ID Fiscal"><br/><br/>
+                <label>Número de Cigarrillo </label>
+                <SELECT NAME="selCombo" SIZE=1 onChange="javascript:alert('Opción seleccionada');"> 
+                    <OPTION SELECTED>Cigarrillo 1</OPTION>
+                    <OPTION>Cigarrillo 2</OPTION>
+                    <OPTION>Cigarrillo 3</OPTION>
+                    <OPTION>Cigarrillo 4</OPTION>
+                    <OPTION>Cigarrillo 5</OPTION>
+                </SELECT><br/><br/>
+                <label>Cantidad de Cigarrillos </label><input type="number" min="0" max="100" step="1" value="0" size="6" name="cantCigarrillos"><br/><br/>
+            </form>
+            <!-- END ALMACENES. -->
+        </div>
+        <!-- MARCAS. -->
+        <div id="container-marcas"style="display: none">
+                <h2>Marcas</h2>
+            <form>
+                <label>ID Fabricante </label><input type="number" min="0" max="100" step="1" value="0" size="6" name="idFabricante"><br/><br/>
+                <label>Nombre </label><input type="text" name="nombreMarca" placeholder="Nombre"><br/><br/>
+            </form>
+            <!--END MARCAS. -->
+        </div>
+
+        <!-- VENTAS. -->
+        <div id="container-ventas"style="display: none">
+                <h2>Ventas</h2>
+            <form>
+                <label>ID Venta </label><input type="number" min="0" max="100" step="1" value="0" size="6" name="idVenta"><br/><br/>
+                <label>ID Fiscal </label><input type="number" min="0" max="100" step="1" value="0" size="6" name="idFiscal"><br/><br/>
+                <label>Número de Cigarrillo </label>
+                <SELECT NAME="selCombo" SIZE=1 onChange="javascript:alert('Opción seleccionada');"> 
+                    <OPTION SELECTED>Cigarrillo 1</OPTION>
+                    <OPTION>Cigarrillo 2</OPTION>
+                    <OPTION>Cigarrillo 3</OPTION>
+                    <OPTION>Cigarrillo 4</OPTION>
+                    <OPTION>Cigarrillo 5</OPTION>
+                </SELECT><br/><br/>
+                <label>Total Número de Cigarrillos </label><input type="number" min="0" max="100" step="1" value="0" size="6" name="totalNumCigarrillos"><br/><br/>
+            </form>
+            <!-- END VENTAS. -->
+        </div>
+
+        <!-- CIGARRILLOS. -->
+        <div id="container-cigarrillos"style="display: none">
+                <h2>Cigarrillos</h2>
+            <form>
+                <label>Número de Cigarrillo </label><input type="number" min="0" max="100" step="1" value="0" size="6" name="numCigarrillos"><br/><br/>
+                <label>Filtro </label>
+                <SELECT NAME="selCombo" SIZE=1 onChange="javascript:alert('Opción seleccionada');"> 
+                    <OPTION SELECTED>Filtro 1</OPTION>
+                    <OPTION>Filtro 2</OPTION>
+                    <OPTION>Filtro 3</OPTION>
+                    <OPTION>Filtro 4</OPTION>
+                    <OPTION>Filtro 5</OPTION>
+                </SELECT><br/><br/>
+                <label>Color de Hoja</label>
+                <SELECT NAME="selCombo" SIZE=1 onChange="javascript:alert('Opción seleccionada');"> 
+                    <OPTION SELECTED>Color de Hoja 1</OPTION>
+                    <OPTION>Color de Hoja 2</OPTION>
+                    <OPTION>Color de Hoja 3</OPTION>
+                    <OPTION>Color de Hoja 4</OPTION>
+                    <OPTION>Color de Hoja 5</OPTION>
+                </SELECT><br/><br/>
+                <label>Mentol </label>
+                <SELECT NAME="selCombo" SIZE=1 onChange="javascript:alert('Opción seleccionada');"> 
+                    <OPTION SELECTED>Mentol 1</OPTION>
+                    <OPTION>Mentol 2</OPTION>
+                    <OPTION>Mentol 3</OPTION>
+                    <OPTION>Mentol 4</OPTION>
+                    <OPTION>Mentol 5</OPTION>
+                </SELECT><br/><br/>
+                <label>Marca </label>
+                <SELECT NAME="selCombo" SIZE=1 onChange="javascript:alert('Opción seleccionada');"> 
+                    <OPTION SELECTED>Marca 1</OPTION>
+                    <OPTION>Marca 2</OPTION>
+                    <OPTION>Marca 3</OPTION>
+                    <OPTION>Marca 4</OPTION>
+                    <OPTION>Marca 5</OPTION>
+                </SELECT><br/><br/>
+                <label>Precio de Venta </label><input type="text" name="precioVenta"><br/><br/>
+                <label>Precio de Compra </label><input type="text" name="precioCompra"><br/><br/>
+                <label>Clase </label><input type="text" name="clase"><br/><br/>
+            </form>
+            <!-- END CIGARRILLOS. -->
+        </div>
+        <!-- CJ. -->
+        <!-- ESTANCOS. -->
+        <div id="container-estancos"style="display: none">
+                <h2>Estancos</h2>
+            <!-- END ESTANCOS. -->
+        </div>
+
+        <!-- CONSULTAS. -->
+        <div id="container-consultas"style="display: none">
+                <h2>Consultas</h2>
+            <!-- END CONSULTAS. -->
+        </div>
+
+        <!-- COMPRAS. -->
+        <div id="container-compras"style="display: none">
+                <h2>Compras</h2>
+            <!-- END COMPRAS. -->
+        </div>
+
+        <!-- FABRICANTES. -->
+        <div id="container-fabricantes"style="display: none">
+                <h2>Fabricantes</h2>
+            <!-- END FABRICANTES. -->
+        </div>
+        <!-- END SECCIONES. -->
+    </div>
+
+        <!-- END PRINCIPAL CONTAINER-->
+    </div>
+
+</body>
+
+</html>
