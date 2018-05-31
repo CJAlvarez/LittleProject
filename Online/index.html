@@ -52,102 +52,147 @@
         <!-- SECCIONES. -->
         <div id="container-secciones" style="display: block">
             <!-- ILICH. -->
-            <!-- ALMACENES. -->
+            <!--        ALMACENES.         -->
             <div id="container-almacenes"style="display: none">
                 <h2>Almacenes</h2>
                 <form>
                     <label>ID Fiscal </label><input type="text" name="idFiscal" placeholder="ID Fiscal"><br/><br/>
-                    <label>Número de Cigarrillo </label>
-                    <SELECT NAME="selCombo" SIZE=1 onChange="javascript:alert('Opción seleccionada');"> 
-                        <OPTION SELECTED>Cigarrillo 1</OPTION>
-                        <OPTION>Cigarrillo 2</OPTION>
-                        <OPTION>Cigarrillo 3</OPTION>
-                        <OPTION>Cigarrillo 4</OPTION>
-                        <OPTION>Cigarrillo 5</OPTION>
-                    </SELECT><br/><br/>
+                    <label>Número de Cigarrillo </label><input type="text" name="numCigarrillo" placeholder="Número de cigarrillo" readonly><br/><br/>
                     <label>Cantidad de Cigarrillos </label><input type="number" min="0" max="100" step="1" value="0" size="6" name="cantCigarrillos"><br/><br/>
                 </form>
-                <!-- END ALMACENES. -->
+                <button id="button-agregarFabricantes">
+                    <h3>Agregar</h3>
+                </button>
+                <button id="button-listarFabricantes" onclick='changeDisplay("ListarAlmacenes")'>
+                    <h3>Tablas</h3>
+                </button>
             </div>
-            <!-- MARCAS. -->
+            <!-- END AGREGAR ALMACENES. -->
+
+            <!-- MOSTRAR ALMACENES. -->
+            <div id="container-listaralmacenes"style="display: none">
+                <br/><h2>Listar Almacenes</h2><br/>
+                <table>
+                    <tr>
+                        <td>ID Fiscal</td>
+                        <td>Número de Cigarrillos</td>
+                        <td>Cantidad de Cigarrillos</td>
+                    </tr>
+                </table>
+            </div>
+            <!-- END MOSTRAR ALMACENES. -->
+
+            <!--        MARCAS.         -->
             <div id="container-marcas"style="display: none">
                 <h2>Marcas</h2>
                 <form>
                     <label>ID Fabricante </label><input type="number" min="0" max="100" step="1" value="0" size="6" name="idFabricante"><br/><br/>
                     <label>Nombre </label><input type="text" name="nombreMarca" placeholder="Nombre"><br/><br/>
                 </form>
-                <!--END MARCAS. -->
+                <button id="button-agregarMarcas">
+                    <h3>Agregar</h3>
+                </button>
+                <button id="button-listarFabricantes" onclick='changeDisplay("ListarMarcas")'>
+                    <h3>Tablas</h3>
+                </button>
             </div>
+            <!-- END AGREGAR MARCAS. -->
 
-            <!-- VENTAS. -->
+            <!-- MOSTRAR MARCAS. -->
+            <div id="container-listarmarcas"style="display: none">
+                <br/><h2>Listar Marcas</h2><br/>
+                <table>
+                    <tr>
+                        <td>ID Fabricante</td>
+                        <td>Nombre</td>
+                    </tr>
+                </table>
+            </div>
+            <!-- END MOSTRAR MARCAS. -->
+
+            <!--        VENTAS.         -->
             <div id="container-ventas"style="display: none">
                 <h2>Ventas</h2>
                 <form>
                     <label>ID Venta </label><input type="number" min="0" max="100" step="1" value="0" size="6" name="idVenta"><br/><br/>
                     <label>ID Fiscal </label><input type="number" min="0" max="100" step="1" value="0" size="6" name="idFiscal"><br/><br/>
-                    <label>Número de Cigarrillo </label>
-                    <SELECT NAME="selCombo" SIZE=1 onChange="javascript:alert('Opción seleccionada');"> 
-                        <OPTION SELECTED>Cigarrillo 1</OPTION>
-                        <OPTION>Cigarrillo 2</OPTION>
-                        <OPTION>Cigarrillo 3</OPTION>
-                        <OPTION>Cigarrillo 4</OPTION>
-                        <OPTION>Cigarrillo 5</OPTION>
-                    </SELECT><br/><br/>
+                    <label>Número de Cigarrillo </label><input type="text" name="numCigarrillo" placeholder="Número de cigarrillo" readonly><br/><br/>
                     <label>Fecha </label><input type="text" name="fechaVentas"><br/><br/>
                     <label>Total Número de Cigarrillos </label><input type="number" min="0" max="100" step="1" value="0" size="6" name="totalNumCigarrillos"><br/><br/>
-                    <label>Precio Unitario </label><input type="text" name="precioUnitario"><br/><br/>
-                    <label>Total Compra </label><input type="text" name="totalCompra"><br/><br/>
+                    <label>Precio Unitario </label><input type="text" name="precioUnitario" readonly><br/><br/>
+                    <label>Total Compra </label><input type="text" name="totalCompra" readonly><br/><br/>
                 </form>
-                <!-- END VENTAS. -->
+                <button id="button-agregarVentas">
+                    <h3>Agregar</h3>
+                </button>
+                <button id="button-listarVentas" onclick='changeDisplay("ListarVentas")'>
+                    <h3>Tablas</h3>
+                </button>
             </div>
+            <!-- END VENTAS. -->
 
-            <!-- CIGARRILLOS. -->
+            <!-- MOSTRAR VENTAS. -->
+            <div id="container-listarventas"style="display: none">
+                <br/><h2>Listar Ventas</h2><br/>
+                <table>
+                    <tr>
+                        <td>ID Venta</td>
+                        <td>ID Fiscal</td>
+                        <td>Número de Cigarrillo</td>
+                        <td>Fecha</td>
+                        <td>Total Número de Cigarrillos</td>
+                        <td>Precio Unitario</td>
+                        <td>Total Compra</td>
+                    </tr>
+                </table>
+            </div>
+            <!-- END MOSTRAR MARCAS. -->
+
+            <!--        CIGARRILLOS.         -->
             <div id="container-cigarrillos"style="display: none">
                 <h2>Cigarrillos</h2>
                 <form>
                     <label>Número de Cigarrillo </label><input type="number" min="0" max="100" step="1" value="0" size="6" name="numCigarrillos">
                     <label>Alquitrán </label><input type="number" min="0" max="100" step="1" value="0" size="6" name="alquitran"><br/><br/>
-                    <label>Filtro </label>
-                    <SELECT NAME="selCombo" SIZE=1 onChange="javascript:alert('Opción seleccionada');"> 
-                        <OPTION SELECTED>Filtro 1</OPTION>
-                        <OPTION>Filtro 2</OPTION>
-                        <OPTION>Filtro 3</OPTION>
-                        <OPTION>Filtro 4</OPTION>
-                        <OPTION>Filtro 5</OPTION>
-                    </SELECT>
+                    <label>Filtro </label><input type="text" name="filtro" placeholder="Filtro" readonly><br/><br/>
                     <label>Nicotina </label><input type="number" min="0" max="100" step="1" value="0" size="6" name="nicotina"><br/><br/>
-                    <label>Color de Hoja</label>
-                    <SELECT NAME="selCombo" SIZE=1 onChange="javascript:alert('Opción seleccionada');"> 
-                        <OPTION SELECTED>Color de Hoja 1</OPTION>
-                        <OPTION>Color de Hoja 2</OPTION>
-                        <OPTION>Color de Hoja 3</OPTION>
-                        <OPTION>Color de Hoja 4</OPTION>
-                        <OPTION>Color de Hoja 5</OPTION>
-                    </SELECT><br/><br/>
-                    <label>Mentol </label>
-                    <SELECT NAME="selCombo" SIZE=1 onChange="javascript:alert('Opción seleccionada');"> 
-                        <OPTION SELECTED>Mentol 1</OPTION>
-                        <OPTION>Mentol 2</OPTION>
-                        <OPTION>Mentol 3</OPTION>
-                        <OPTION>Mentol 4</OPTION>
-                        <OPTION>Mentol 5</OPTION>
-                    </SELECT><br/><br/>
-                    <label>Marca </label>
-                    <SELECT NAME="selCombo" SIZE=1 onChange="javascript:alert('Opción seleccionada');"> 
-                        <OPTION SELECTED>Marca 1</OPTION>
-                        <OPTION>Marca 2</OPTION>
-                        <OPTION>Marca 3</OPTION>
-                        <OPTION>Marca 4</OPTION>
-                        <OPTION>Marca 5</OPTION>
-                    </SELECT><br/><br/>
+                    <label>Color de Hoja</label><input type="text" name="colorHoja" placeholder="Color de Hoja" readonly><br/><br/>
+                    <label>Mentol </label><input type="text" name="mentol" placeholder="Mentol" readonly><br/><br/>
+                    <label>Marca </label><input type="text" name="marca" placeholder="Marca" readonly><br/><br/>
                     <label>Precio de Venta </label><input type="text" name="precioVenta"><br/><br/>
                     <label>Precio de Compra </label><input type="text" name="precioCompra"><br/><br/>
                     <label>Clase </label><input type="text" name="clase"><br/><br/>
                 </form>
-                <!-- END CIGARRILLOS. -->
+                <button id="button-agregarCigarrillo">
+                    <h3>Agregar</h3>
+                </button>
+                <button id="button-listarCigarrillos" onclick='changeDisplay("ListarCigarrillos")'>
+                    <h3>Tablas</h3>
+                </button>
             </div>
-            <!-- CJ. -->
-            <!-- ESTANCOS. -->
+            <!-- END CIGARRILLOS. -->
+
+            <!-- MOSTRAR CIGARRILLOS. -->
+            <div id="container-listarcigarrillos"style="display: none">
+                <br/><h2>Listar Cigarrillos</h2><br/>
+                <table>
+                    <tr>
+                        <td>Número de Cigarrillo</td>
+                        <td>Alquitrán</td>
+                        <td>Filtro</td>
+                        <td>Nicotina</td>
+                        <td>Color de Hoja</td>
+                        <td>Mentol</td>
+                        <td>Marca</td>
+                        <td>Precio de Venta</td>
+                        <td>Precio de Compra</td>
+                        <td>Clase</td>
+                    </tr>
+                </table>
+            </div>
+            <!-- END MOSTRAR CIGARRILLOS. -->
+
+            <!--        ESTANCOS.         -->
             <div id="container-estancos"style="display: none">
                 <h2>Estancos</h2>
                 <form>
@@ -157,36 +202,73 @@
                     <label>Nombre </label><input type="text" name="nombre"><br/><br/>
                     <label>Provincia </label><input type="text" name="provincia"><br/><br/>
                 </form>
-                <!-- END ESTANCOS. -->
+                <button id="button-agregarEstanco">
+                    <h3>Agregar</h3>
+                </button>
+                <button id="button-listarEstancos" onclick='changeDisplay("ListarEstancos")'>
+                    <h3>Tablas</h3>
+                </button>
             </div>
+            <!-- END ESTANCOS. -->
 
-            <!-- CONSULTAS. -->
+            <!-- MOSTRAR ESTANCOS. -->
+            <div id="container-listarestancos"style="display: none">
+                <br/><h2>Listar Estancos</h2><br/>
+                <table>
+                    <tr>
+                        <td>ID Fiscal</td>
+                        <td>Número de Expendio</td>
+                        <td>Localidad</td>
+                        <td>Nombre</td>
+                        <td>Provincia</td>
+                    </tr>
+                </table>
+            </div>
+            <!-- END MOSTRAR ESTANCOS. -->
+
+            <!--        CONSULTAS.         -->
             <div id="container-consultas"style="display: none">
                 <h2>Consultas</h2>
                 <!-- END CONSULTAS. -->
             </div>
 
-            <!-- COMPRAS. -->
+            <!--        COMPRAS.         -->
             <div id="container-compras"style="display: none">
                 <h2>Compras</h2>
                 <form>
                     <label>ID Compra </label><input type="text" name="idCompra"><br/><br/>
                     <label>ID Fiscal </label><input type="text" name="idFiscal"><br/><br/>
-                    <label>Número de Cigarrillo </label>
-                    <SELECT NAME="selCombo" SIZE=1 onChange="javascript:alert('Opción seleccionada');"> 
-                        <OPTION SELECTED>Cigarrillo 1</OPTION>
-                        <OPTION>Cigarrillo 2</OPTION>
-                        <OPTION>Cigarrillo 3</OPTION>
-                        <OPTION>Cigarrillo 4</OPTION>
-                        <OPTION>Cigarrillo 5</OPTION>
-                    </SELECT><br/><br/>
-                    <label>Total Número de Cigarrillos </label><input type="text" name="totalNumCigarrillos"><br/><br/>
-                    <label>Fecha </label><input type="text" name="fechaCompras"><br/><br/>
-                    <label>Precio Unitario </label><input type="text" name="precioUnitario"><br/><br/>
-                    <label>Total Compra </label><input type="text" name="totalCompra"><br/><br/>
+                    <label>Número de Cigarrillo </label><input type="text" name="numCigarrillo" placeholder="Número de Cigarrillo" readonly><br/><br/>
+                    <label>Total Número de Cigarrillos </label><input type="text" name="totalNumCigarrillos" placeholder="Número de Cigarrillo" readonly><br/><br/>
+                    <label>Fecha </label><input type="text" name="fechaCompras" ><br/><br/>
+                    <label>Precio Unitario </label><input type="text" name="precioUnitario" readonly><br/><br/>
+                    <label>Total Compra </label><input type="text" name="totalCompra" readonly><br/><br/>
                 </form>
-                <!-- END COMPRAS. -->
+                <button id="button-agregarCompra">
+                    <h3>Agregar</h3>
+                </button>
+                <button id="button-listarCompras" onclick='changeDisplay("ListarCompras")'>
+                    <h3>Tablas</h3>
+                </button>
             </div>
+            <!-- END COMPRAS. -->
+
+            <!-- MOSTRAR COMPRAS. -->
+            <div id="container-listarcompras"style="display: none">
+                <br/><h2>Listar Compras</h2><br/>
+                <table>
+                    <tr>
+                        <td>ID Compra</td>
+                        <td>ID Fiscal</td>
+                        <td>Número de Cigarrillo</td>
+                        <td>Total Número de Cigarrillos</td>
+                        <td>Fecha</td>
+                        <td>Precio Unitario</td>
+                        <td>Total Compra</td>
+                    </tr>
+                </table>
+            </div>
+            <!-- END MOSTRAR COMPRAS. -->
 
             <!-- FABRICANTES. -->
             <div id="container-fabricantes"style="display: none">
@@ -196,13 +278,32 @@
                     <label>Sede </label><input type="text" name="sede"><br/><br/>
                     <label>Nombre </label><input type="text" name="nombreFabricante"><br/><br/>
                 </form>
-                <!-- END FABRICANTES. -->
+                <button id="button-agregarFabricante">
+                    <h3>Agregar</h3>
+                </button>
+                <button id="button-listarFabricantes" onclick='changeDisplay("ListarFabricantes")'>
+                    <h3>Tablas</h3>
+                </button>
             </div>
-            <!-- END SECCIONES. -->
-        </div>
+            <!-- END FABRICANTES. -->
 
-        <!-- END PRINCIPAL CONTAINER-->
+            <!-- MOSTRAR FABRICANTES. -->
+            <div id="container-listarfabricantes"style="display: none">
+                <br/><h2>Listar Fabricantes</h2><br/>
+                <table>
+                    <tr>
+                        <td>ID Fabricante</td>
+                        <td>Sede</td>
+                        <td>Nombre</td>
+                    </tr>
+                </table>
+            </div>
+            <!-- END MOSTRAR FABRICANTES. -->
+        </div>
+        <!-- END SECCIONES. -->
+
     </div>
+    <!-- END PRINCIPAL CONTAINER-->
 
 </body>
 
