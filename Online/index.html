@@ -10,7 +10,21 @@
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
     <script src="main.js"></script>
 </head>
+<script type="text/javascript">
+    var almacenes = [];
 
+    function add() {
+        changeDisplay("ListarAlmacenes");
+        window.print();
+    }
+
+    function print() {
+        window.print();
+        for (var i = 0; i < almacenes.length; i++) {
+            
+        }
+    }
+</script>
 <body>
     <noscript> © 2018 Noscript. </noscript>
 
@@ -57,13 +71,13 @@
                 <h2>Almacenes</h2>
                 <form>
                     <label>ID Fiscal </label><input type="text" name="idFiscal" placeholder="ID Fiscal"><br/><br/>
-                    <label>Número de Cigarrillo </label><input type="text" name="numCigarrillo" placeholder="Número de cigarrillo" readonly><br/><br/>
+                    <label>Número de Cigarrillo </label><input type="text" name="numCigarrillo" placeholder="Número de cigarrillo"><br/><br/>
                     <label>Cantidad de Cigarrillos </label><input type="number" min="0" max="100" step="1" value="0" size="6" name="cantCigarrillos"><br/><br/>
                 </form>
                 <button id="button-agregarFabricantes">
                     <h3>Agregar</h3>
                 </button>
-                <button id="button-listarFabricantes" onclick='changeDisplay("ListarAlmacenes")'>
+                <button id="button-listarFabricantes" onclick='add()'>
                     <h3>Tablas</h3>
                 </button>
             </div>
